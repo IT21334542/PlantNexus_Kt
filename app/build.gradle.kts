@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.example.plantnexus_kt"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.plantnexus_kt"
