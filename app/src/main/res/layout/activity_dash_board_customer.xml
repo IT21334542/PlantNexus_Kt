@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_green"
+    tools:context=".DashBoard_Customer">
+    
+    <RelativeLayout
+        android:id="@+id/DashNavCards"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_scanplnat"
+                android:layout_margin="2dp"
+                android:layout_width="@dimen/dashcard_width"
+                android:layout_height="@dimen/dashcard_height"
+                android:backgroundTint="@color/g2"/>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_myplants"
+                android:layout_margin="2dp"
+                android:layout_toRightOf="@id/card_scanplnat"
+                android:layout_width="@dimen/dashcard_width"
+                android:layout_height="@dimen/dashcard_height"
+                android:backgroundTint="@color/g2"/>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_chatbot"
+                    android:layout_margin="2dp"
+                    android:layout_below="@id/card_scanplnat"
+                    android:layout_width="@dimen/dashcard_width"
+                    android:layout_height="@dimen/dashcard_height"
+                    android:backgroundTint="@color/g2"/>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_orders"
+                    android:layout_alignTop="@id/card_chatbot"
+                    android:layout_alignStart="@id/card_myplants"
+                    android:layout_width="@dimen/dashcard_width"
+                    android:layout_margin="2dp"
+                    android:layout_height="@dimen/dashcard_height"
+                    android:backgroundTint="@color/g2"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_below="@id/DashNavCards"
+        android:id="@+id/Tempholder_dash"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.cardview.widget.CardView
+            android:layout_width="380dp"
+            android:layout_alignParentEnd="true"
+            app:cardCornerRadius="5dp"
+            android:layout_height="40dp"
+            android:backgroundTint="@color/c1">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:src="@mipmap/cross_in"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"/>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_marginTop="4dp"
+        android:id="@+id/BlogHolder"
+        android:layout_below="@id/Tempholder_dash"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:id="@+id/blogName"
+            android:layout_width="match_parent"
+            android:layout_height="30dp">
+            <TextView
+                android:layout_alignParentStart="true"
+                android:layout_width="wrap_content"
+                android:text="@string/blogs"
+                android:textSize="@dimen/cardTitle"
+                android:layout_marginStart="15dp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text=" 0 0 0 "
+                android:textSize="20sp"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_below="@id/blogName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/blogone"
+                        android:layout_width="@dimen/blogCard_dash"
+                        android:layout_height="@dimen/blogcard_width"
+                        android:layout_marginStart="1dp"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginEnd="1dp"
+                        android:layout_marginBottom="1dp"
+                        android:backgroundTint="@color/g2" />
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/blogtwo"
+                        android:layout_toRightOf="@id/blogone"
+                        android:layout_width="@dimen/blogCard_dash"
+                        android:layout_height="@dimen/blogcard_width"
+                        android:layout_margin="1dp"
+                        android:backgroundTint="@color/g2" />
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="@dimen/blogCard_dash"
+                        android:layout_toRightOf="@id/blogtwo"
+                        android:layout_height="@dimen/blogcard_width"
+                        android:layout_margin="1dp"
+                        android:backgroundTint="@color/g2" />
+                </RelativeLayout>
+            </HorizontalScrollView>
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_below="@id/BlogHolder"
+        android:layout_marginTop="10dp"
+        android:id="@+id/PlantsHolderdash"
+        android:layout_width="match_parent"
+        android:background="@color/g2"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_marginTop="3dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/breaker">
+            <androidx.cardview.widget.CardView
+                android:layout_width="150dp"
+                android:elevation="10dp"
+                app:cardCornerRadius="30dp"
+                android:backgroundTint="#9D9D9D"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="5dp"
+                android:layout_height="10dp"/>
+
+        </RelativeLayout>
+        <HorizontalScrollView
+            android:layout_below="@id/breaker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+
+        <RelativeLayout
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <androidx.cardview.widget.CardView
+                android:id="@+id/Plantcardone"
+                app:cardCornerRadius="20dp"
+                android:layout_width="@dimen/productCardwidth"
+                androidlayout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_height="@dimen/productcardheight"
+                android:background="@color/c1"
+                android:backgroundTint="@color/c1"/>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/Plantcardtwo"
+                android:layout_width="@dimen/productCardwidth"
+                android:layout_height="@dimen/productcardheight"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="1dp"
+                android:layout_toRightOf="@id/Plantcardone"
+                android:background="@color/c1"
+                android:backgroundTint="@color/c1"
+                app:cardCornerRadius="20dp" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="@dimen/productCardwidth"
+                android:layout_height="@dimen/productcardheight"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="1dp"
+                android:layout_toRightOf="@id/Plantcardtwo"
+                android:background="@color/c1"
+                android:backgroundTint="@color/c1"
+                app:cardCornerRadius="20dp" />
+        </RelativeLayout>
+        </HorizontalScrollView>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

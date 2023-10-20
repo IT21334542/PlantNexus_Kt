@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_green"
+    tools:context=".ScanResults">
+
+    <RelativeLayout
+        android:id="@+id/head_serach"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/navigateback_serach"
+                android:src="@mipmap/navback_foreground"
+                android:layout_width="60dp"
+                android:layout_marginTop="15dp"
+                android:layout_height="@dimen/headerheight"/>
+            <ImageView
+                android:id="@+id/home_serach"
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@id/navigateback_serach"
+                android:src="@mipmap/home2_foreground"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/headerheight"/>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_below="@id/head_serach"
+        android:id="@+id/title_products_search"
+        android:layout_width="match_parent"
+        android:paddingEnd="30dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_alignParentEnd="true"
+            android:id="@+id/Name_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PlantNammr"
+            android:textSize="36sp"/>
+        <TextView
+            android:layout_alignParentEnd="true"
+            android:id="@+id/varient_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="plant"
+            android:layout_below="@id/Name_search"
+            android:textSize="24sp"/>
+        <TextView
+            android:layout_alignParentEnd="true"
+            android:id="@+id/price_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1999.00"
+            android:layout_marginTop="50dp"
+            android:layout_below="@id/varient_search"
+            android:textSize="24sp"/>
+        <TextView
+            android:layout_alignParentEnd="true"
+            android:id="@+id/mode_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="indoor"
+            android:layout_marginTop="1dp"
+            android:layout_below="@id/price_search"
+            android:textSize="24sp"/>
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_marginTop="30dp"
+        android:background="@drawable/desc_holder"
+        android:layout_below="@id/title_products_search"
+        android:layout_width="match_parent"
+        android:layout_height="500dp">
+        <TextView
+            android:id="@+id/plant_desc"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"/>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btnplaceOrder_search"
+            app:cardCornerRadius="5dp"
+            android:layout_width="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="25dp"
+            android:layout_height="wrap_content">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Place Order"
+                    android:textSize="30dp"
+                    android:paddingStart="30dp"
+                    android:paddingEnd="30dp"/>
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+</RelativeLayout>

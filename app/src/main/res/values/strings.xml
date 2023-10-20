@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">PlantNexus_Kt</string>
+    <string name="blogs">Blogs</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Log In</string>
+    <string name="signup">Sign Up</string>
+    <string name="register">Register</string>
+    <string name="registeras">Register as</string>
+    <string name="welcome_community">Welcome to \nCommunity,</string>
+    <string name="fullname">Full name</string>
+    <string name="phone">Contact Number</string>
+    <string name="next">Next</string>
+    <string name="storename">Store/Brand Name</string>
+    <string name="address">Store Address</string>
 </resources>
