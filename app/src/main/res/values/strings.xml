@@ -13,4 +13,5 @@
     <string name="next">Next</string>
     <string name="storename">Store/Brand Name</string>
     <string name="address">Store Address</string>
+    <string name="analytics">Analytics</string>
 </resources>
