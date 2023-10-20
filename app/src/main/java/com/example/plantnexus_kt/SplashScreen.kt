@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.widget.RelativeLayout
 
 class SplashScreen : AppCompatActivity() {
 
@@ -16,7 +17,7 @@ class SplashScreen : AppCompatActivity() {
 
         Handler(Looper.getMainLooper()).postDelayed(
             {
-                val intenter : Intent = Intent(this@SplashScreen,Dashboard_Deliveryboy::class.java);
+                val intenter : Intent = Intent(this@SplashScreen,DashBoard_Customer::class.java);
                 startActivity(intenter)
             },
             3000
