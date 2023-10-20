@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_gradient_green_white"
+    android:orientation="vertical"
+    tools:context=".Login">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="383dp"
+        android:src="@mipmap/app_logo_foreground" />
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/username"
+        android:text="@string/username"
+        android:textAlignment="center"
+        android:textSize="34sp" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/login"
+        android:inputType="textPassword"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        tools:text="@string/password" />
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="314dp"
+        android:layout_height="65dp"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="#228863"
+        android:text="@string/login"
+        android:textAlignment="center"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/signup"
+        android:layout_width="314dp"
+        android:layout_height="65dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="#228863"
+        android:text="@string/signup"
+        android:textAlignment="center"
+        android:textSize="24sp" />
+
+</LinearLayout>

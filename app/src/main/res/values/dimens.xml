@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="dashcard_width">200dp</dimen>
+    <dimen name="dashcard_height">120dp</dimen>
+    <dimen name="cardTitle">20sp</dimen>
+    <dimen name="blogCard_dash">300dp</dimen>
+    <dimen name="blogcard_width">150dp</dimen>
+    <dimen name="productCardwidth">180dp</dimen>
+    <dimen name="productcardheight">220dp</dimen>
+    <dimen name="username">34sp</dimen>
+    <dimen name="password">34sp</dimen>
+    <dimen name="register_details">34sp</dimen>
+    <dimen name="registerseller">24sp</dimen>
+    <dimen name="headerheight">40dp</dimen>
+</resources>
