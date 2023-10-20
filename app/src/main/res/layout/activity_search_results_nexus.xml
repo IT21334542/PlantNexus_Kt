@@ -1,9 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SearchResults_nexus">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:id="@+id/head_serach"
+        android:background="@color/c1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/navigateback_serach"
+            android:src="@mipmap/navback_foreground"
+            android:layout_width="60dp"
+            android:layout_marginTop="15dp"
+            android:layout_height="@dimen/headerheight"/>
+        <ImageView
+            android:id="@+id/home_serach"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@id/navigateback_serach"
+            android:src="@mipmap/home2_foreground"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/headerheight"/>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/imgs"
+        android:layout_below="@id/head_serach"
+        android:layout_width="match_parent"
+        android:background="@color/c1"
+        android:layout_height="300dp">
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_below="@id/imgs"
+        android:layout_width="match_parent"
+        android:background="@color/g2"
+        android:layout_height="380dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Scan Results"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:id="@+id/srchtxt"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"/>
+        <TextView
+            android:id="@+id/txttiltle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="tile"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/srchtxt"/>
+        <TextView
+            android:layout_below="@id/txttiltle"
+            android:layout_marginTop="2dp"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:textColor="@color/white"
+            android:id="@+id/aboutplant"/>
+
+
+
+
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>
