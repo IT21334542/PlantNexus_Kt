@@ -3,6 +3,7 @@ package com.example.plantnexus_kt
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.TextView
 import com.github.mikephil.charting.charts.BarChart
 import com.github.mikephil.charting.charts.PieChart
 import com.github.mikephil.charting.data.BarData
@@ -14,10 +15,13 @@ import com.github.mikephil.charting.data.PieEntry
 import com.github.mikephil.charting.formatter.ValueFormatter
 
 class Dashboard_Deliveryboy : AppCompatActivity() {
+    private lateinit var usernamedelivery:TextView
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dashboard_deliveryboy)
+
+        init()
 
         val pieChart = findViewById<PieChart>(R.id.pieChart)
 
@@ -51,5 +55,9 @@ class Dashboard_Deliveryboy : AppCompatActivity() {
         pieChart.data = pieData
         pieChart.description.isEnabled = false // Hide description
         pieChart.setUsePercentValues(false) // Display values as percentages
+    }
+
+    private fun init(){
+        usernamedelivery = findViewById(R.id.deliveryname)
     }
 }
