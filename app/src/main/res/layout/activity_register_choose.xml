@@ -74,14 +74,14 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <ImageView
+        <ImageButton
             android:id="@+id/customer"
             android:layout_width="173dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
-        <ImageView
+        <ImageButton
             android:id="@+id/seller"
             android:layout_width="180dp"
             android:layout_height="172dp"
