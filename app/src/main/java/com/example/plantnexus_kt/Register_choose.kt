@@ -14,6 +14,7 @@ class Register_choose : AppCompatActivity() {
         setContentView(R.layout.activity_register_choose)
 
         init()
+        println("");
 
     }
 
