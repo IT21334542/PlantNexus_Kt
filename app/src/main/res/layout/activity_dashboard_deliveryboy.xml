@@ -7,6 +7,13 @@
     android:background="@color/main_green"
     tools:context=".Dashboard_Deliveryboy">
 
+    <TextView
+        android:id="@+id/deliveryboy"
+        android:layout_width="204dp"
+        android:layout_height="wrap_content"
+        android:text="@string/deliveryboy"
+        android:textSize="24sp" />
+
     <RelativeLayout
         android:id="@+id/DashNavCardssel"
         android:layout_alignParentTop="true"
