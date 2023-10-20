@@ -28,6 +28,8 @@ class DashBoard_Customer : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dash_board_customer);
 
+        init()
+
 
 //        Handler(Looper.getMainLooper()).postDelayed({
 //            val to : Intent = Intent(this@DashBoard_Customer, DashBoard_Customer::class.java);
