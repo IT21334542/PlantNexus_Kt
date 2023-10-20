@@ -34,7 +34,7 @@
         android:id="@+id/DashNavCardssel"
         android:layout_alignParentTop="true"
         android:layout_below="@+id/delivery"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="60dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <RelativeLayout
@@ -86,21 +86,7 @@
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <androidx.cardview.widget.CardView
-            android:layout_width="380dp"
-            android:layout_alignParentEnd="true"
-            app:cardCornerRadius="5dp"
-            android:layout_height="40dp"
-            android:backgroundTint="@color/c1">
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <ImageView
-                    android:src="@mipmap/cross_in"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"/>
-            </RelativeLayout>
-        </androidx.cardview.widget.CardView>
+
     </RelativeLayout>
 
     <RelativeLayout
@@ -139,6 +125,12 @@
                 android:layout_height="30dp"
                 android:text="7th October 2015"
                 android:textColor="#FFFFFF" />
+
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/pieChart"
+                android:layout_below="@id/date"
+                android:layout_width="match_parent"
+                android:layout_height="210dp" />
 
 
         </RelativeLayout>

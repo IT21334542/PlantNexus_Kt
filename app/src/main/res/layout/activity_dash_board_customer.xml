@@ -20,10 +20,13 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_scanplnat"
-                android:layout_margin="2dp"
                 android:layout_width="@dimen/dashcard_width"
                 android:layout_height="@dimen/dashcard_height"
-                android:backgroundTint="@color/g2"/>
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="2dp"
+                android:backgroundTint="@color/g2" />
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_myplants"
                 android:layout_margin="2dp"
@@ -195,6 +198,7 @@
                 app:cardCornerRadius="20dp" />
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/Plantcardthree"
                 android:layout_width="@dimen/productCardwidth"
                 android:layout_height="@dimen/productcardheight"
                 android:layout_marginStart="5dp"
