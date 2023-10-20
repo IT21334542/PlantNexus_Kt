@@ -13,6 +13,9 @@
         android:theme="@style/Theme.PlantNexus_Kt"
         tools:targetApi="31">
         <activity
+            android:name=".Dashboard_Deliveryboy"
+            android:exported="false" />
+      <activity
             android:name=".SearchResults_nexus"
             android:exported="false" />
         <activity
