@@ -8,9 +8,10 @@
     tools:context=".DashBoard_Customer">
     
     <RelativeLayout
+
         android:id="@+id/DashNavCards"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="30dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <RelativeLayout
@@ -41,178 +42,180 @@
                     android:layout_width="@dimen/dashcard_width"
                     android:layout_height="@dimen/dashcard_height"
                     android:backgroundTint="@color/g2"/>
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/card_orders"
-                    android:layout_alignTop="@id/card_chatbot"
-                    android:layout_alignStart="@id/card_myplants"
-                    android:layout_width="@dimen/dashcard_width"
-                    android:layout_margin="2dp"
-                    android:layout_height="@dimen/dashcard_height"
-                    android:backgroundTint="@color/g2"/>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_orders"
+                android:layout_width="@dimen/dashcard_width"
+                android:layout_height="@dimen/dashcard_height"
+                android:layout_alignStart="@id/card_myplants"
+                android:layout_alignTop="@id/card_chatbot"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="2dp"
+                android:backgroundTint="@color/g2" />
         </RelativeLayout>
     </RelativeLayout>
 
     <RelativeLayout
+        android:layout_marginTop="20dp"
         android:layout_below="@id/DashNavCards"
         android:id="@+id/Tempholder_dash"
-
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <androidx.cardview.widget.CardView
-            android:layout_width="380dp"
-            android:layout_alignParentEnd="true"
-            app:cardCornerRadius="5dp"
-            android:layout_height="40dp"
-            android:backgroundTint="@color/c1">
+        android:background="@drawable/temp_card"
+        android:layout_alignParentEnd="true"
+        android:layout_width="350dp"
+        android:layout_height="40dp">
             <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:id="@+id/close_temp_details"
+                android:layout_marginStart="10dp"
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+               >
                 <ImageView
-                    android:src="@mipmap/cross_in"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"/>
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@mipmap/arrow_icon_foreground"/>
             </RelativeLayout>
-        </androidx.cardview.widget.CardView>
+        <RelativeLayout
+            android:id="@+id/rightR"
+            android:layout_width="5dp"
+            android:layout_height="match_parent"
+            android:background="@color/main_green"
+            android:layout_toRightOf="@id/close_temp_details"
+            android:layout_marginStart="15dp"/>
+        <RelativeLayout
+            android:id="@+id/MidR"
+            android:layout_width="40dp"
+            android:layout_toEndOf="@id/rightR"
+            android:layout_height="match_parent"
+            android:background="@color/main_green"
+            android:layout_toRightOf="@id/close_temp_details"
+            android:layout_marginStart="5dp"/>
+        <RelativeLayout
+            android:id="@+id/LeftR"
+            android:layout_width="5dp"
+            android:layout_toEndOf="@id/MidR"
+            android:layout_height="match_parent"
+            android:background="@color/main_green"
+            android:layout_toRightOf="@id/close_temp_details"
+            android:layout_marginStart="5dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Watering Plant not recommaded"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:layout_toRightOf="@id/LeftR"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/reccomadation"/>
     </RelativeLayout>
 
     <RelativeLayout
-        android:layout_marginTop="4dp"
-        android:id="@+id/BlogHolder"
-        android:layout_below="@id/Tempholder_dash"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <RelativeLayout
-            android:id="@+id/blogName"
-            android:layout_width="match_parent"
-            android:layout_height="30dp">
-            <TextView
-                android:layout_alignParentStart="true"
-                android:layout_width="wrap_content"
-                android:text="@string/blogs"
-                android:textSize="@dimen/cardTitle"
-                android:layout_marginStart="15dp"
-                android:layout_height="wrap_content"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:text=" 0 0 0 "
-                android:textSize="20sp"/>
-        </RelativeLayout>
-        <RelativeLayout
-            android:layout_below="@id/blogName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
 
+    </RelativeLayout>
+
+<!--    <RelativeLayout-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:background="@color/g2"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/plantcardholder">-->
+<!--        <RelativeLayout-->
+<!--            android:layout_width=""-->
+<!--            android:layout_height=""-->
+
+<!--    </RelativeLayout>-->
+
+        <RelativeLayout
+            android:layout_above="@id/rec_holder_dash"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+
+            android:layout_height="280dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Blog"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/blogtitle"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/more_icon_foreground"
+                    android:layout_alignTop="@id/blogtitle"
+                    android:layout_alignBottom="@id/blogtitle"
+                    android:padding="0dp"
+                    android:layout_alignParentEnd="true"/>
             <HorizontalScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="310dp"
+                android:layout_below="@id/blogtitle"
+                android:layout_marginTop="10dp">
                 <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/blogone"
-                        android:layout_width="@dimen/blogCard_dash"
-                        android:layout_height="@dimen/blogcard_width"
-                        android:layout_marginStart="1dp"
-                        android:layout_marginTop="1dp"
-                        android:layout_marginEnd="1dp"
-                        android:layout_marginBottom="1dp"
-                        android:backgroundTint="@color/g2" />
+                        android:backgroundTint="@color/g2"
+                        android:layout_width="350dp"
+                        android:layout_height="200dp"
+                        android:layout_margin="5dp"/>
+
                     <androidx.cardview.widget.CardView
                         android:id="@+id/blogtwo"
+                        android:backgroundTint="@color/g2"
                         android:layout_toRightOf="@id/blogone"
-                        android:layout_width="@dimen/blogCard_dash"
-                        android:layout_height="@dimen/blogcard_width"
-                        android:layout_margin="1dp"
-                        android:backgroundTint="@color/g2" />
+                        android:layout_width="350dp"
+                        android:layout_height="200dp"
+                        android:layout_margin="5dp"/>
+
                     <androidx.cardview.widget.CardView
-                        android:layout_width="@dimen/blogCard_dash"
+                        android:id="@+id/blogthree"
+                        android:backgroundTint="@color/g2"
                         android:layout_toRightOf="@id/blogtwo"
-                        android:layout_height="@dimen/blogcard_width"
-                        android:layout_margin="1dp"
-                        android:backgroundTint="@color/g2" />
+                        android:layout_width="350dp"
+                        android:layout_height="200dp"
+                        android:layout_margin="5dp"/>
+
                 </RelativeLayout>
+
             </HorizontalScrollView>
 
-
         </RelativeLayout>
 
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_below="@id/BlogHolder"
-        android:layout_marginTop="10dp"
-        android:id="@+id/PlantsHolderdash"
-        android:layout_width="match_parent"
-        android:background="@color/g2"
-        android:layout_height="wrap_content">
-
         <RelativeLayout
-            android:layout_marginTop="3dp"
+            android:id="@+id/rec_holder_dash"
+            android:layout_alignParentBottom="true"
+            android:background="@color/g2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/breaker">
-            <androidx.cardview.widget.CardView
-                android:layout_width="150dp"
-                android:elevation="10dp"
-                app:cardCornerRadius="30dp"
-                android:backgroundTint="#9D9D9D"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="5dp"
-                android:layout_height="10dp"/>
+            android:layout_height="250dp">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:id="@+id/dragger">
+                <RelativeLayout
+                    android:layout_centerInParent="true"
+                    android:layout_width="150dp"
+                    android:layout_height="10dp"
+                    android:background="@color/white"/>
+            </RelativeLayout>
+
 
         </RelativeLayout>
-        <HorizontalScrollView
-            android:layout_below="@id/breaker"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
 
 
-        <RelativeLayout
-            android:layout_centerInParent="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <androidx.cardview.widget.CardView
-                android:id="@+id/Plantcardone"
-                app:cardCornerRadius="20dp"
-                android:layout_width="@dimen/productCardwidth"
-                androidlayout_marginEnd="5dp"
-                android:layout_marginStart="5dp"
-                android:layout_height="@dimen/productcardheight"
-                android:background="@color/c1"
-                android:backgroundTint="@color/c1"/>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/Plantcardtwo"
-                android:layout_width="@dimen/productCardwidth"
-                android:layout_height="@dimen/productcardheight"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="1dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginBottom="1dp"
-                android:layout_toRightOf="@id/Plantcardone"
-                android:background="@color/c1"
-                android:backgroundTint="@color/c1"
-                app:cardCornerRadius="20dp" />
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/Plantcardthree"
-                android:layout_width="@dimen/productCardwidth"
-                android:layout_height="@dimen/productcardheight"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="1dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginBottom="1dp"
-                android:layout_toRightOf="@id/Plantcardtwo"
-                android:background="@color/c1"
-                android:backgroundTint="@color/c1"
-                app:cardCornerRadius="20dp" />
-        </RelativeLayout>
-        </HorizontalScrollView>
 
 
-    </RelativeLayout>
+
 
 </RelativeLayout>
