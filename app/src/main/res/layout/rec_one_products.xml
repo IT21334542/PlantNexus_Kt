@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+        android:id="@+id/Plantcardone"
+        android:background="@color/c1"
+        android:backgroundTint="@color/c1"
+        android:layout_margin="5dp"
+        app:cardCornerRadius="20dp"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="@dimen/productCardwidth"
+        android:layout_height="@dimen/productcardheight"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/PlantPreview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+               />
+            <TextView
+                android:id="@+id/plant_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="PLANT TEXT"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="15dp"
+                android:textAllCaps="true"
+                android:background="@color/white"
+                android:textColor="@color/g2"
+                android:textAlignment="center"
+                android:textSize="16sp"/>
+        </RelativeLayout>
+</androidx.cardview.widget.CardView>
+
