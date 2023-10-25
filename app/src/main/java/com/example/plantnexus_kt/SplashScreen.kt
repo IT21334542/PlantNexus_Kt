@@ -17,7 +17,7 @@ class SplashScreen : AppCompatActivity() {
 
         Handler(Looper.getMainLooper()).postDelayed(
             {
-                val intenter : Intent = Intent(this@SplashScreen,DashBoard_Customer::class.java);
+                val intenter : Intent = Intent(this@SplashScreen,Scan::class.java);
                 startActivity(intenter)
             },
             3000

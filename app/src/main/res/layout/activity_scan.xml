@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_green"
+    tools:context=".Scan">
+
+    <RelativeLayout
+        android:id="@+id/head_serach"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/navigateback_serach"
+            android:layout_width="60dp"
+            android:layout_height="@dimen/headerheight"
+            android:layout_marginTop="15dp"
+            android:src="@mipmap/navback_foreground" />
+
+        <ImageView
+            android:id="@+id/home_serach"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/headerheight"
+            android:layout_alignTop="@id/navigateback_serach"
+            android:layout_alignParentEnd="true"
+            android:src="@mipmap/home2_foreground" />
+
+    </RelativeLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_scan"
+        android:layout_width="294dp"
+        android:layout_height="422dp"
+        android:layout_below="@id/head_serach"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="100dp"
+        app:cardBackgroundColor="#005C8F47"
+        app:cardCornerRadius="15dp">
+
+        <ImageView
+            android:id="@+id/scan"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/scans" />
+
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/btn_scan"
+        android:layout_width="215dp"
+        android:layout_height="79dp"
+        android:layout_below="@id/card_scan"
+        android:layout_alignBaseline="@id/card_scan"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="#228863"
+        android:text="@string/scan"
+        android:textAlignment="center"
+        android:textSize="24sp" />
+
+
+</RelativeLayout>
