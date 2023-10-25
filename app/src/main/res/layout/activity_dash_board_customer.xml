@@ -247,12 +247,22 @@
                     android:background="@color/white"/>
             </RelativeLayout>
 
+
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/products_dash"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/dragger"
                 android:layout_marginTop="1dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/products_dash_grid"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/products_dash"
+                android:layout_marginTop="5dp"/>
 
 
         </RelativeLayout>
