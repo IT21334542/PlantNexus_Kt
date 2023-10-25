@@ -27,7 +27,8 @@ class ProductAdaptor(val ProductList : ArrayList<Plants>,val mcontxt : Context) 
     }
 
     override fun getItemCount(): Int {
-        return ProductList.size
+        return ProductList.size;
+        notifyDataSetChanged()
     }
 
     override fun onBindViewHolder(holder: ViewH, position: Int) {
