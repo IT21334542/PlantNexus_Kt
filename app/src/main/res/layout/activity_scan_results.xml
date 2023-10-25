@@ -122,7 +122,7 @@
         app:cardCornerRadius="15dp"
         android:layout_marginTop="200dp"
         android:layout_marginStart="30dp"
-        android:id="@+id/card_plantS">
+        android:id="@+id/card_scan">
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
