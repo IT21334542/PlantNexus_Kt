@@ -2,10 +2,13 @@ package com.example.plantnexus_kt
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.graphics.Bitmap
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.provider.MediaStore
+import android.util.Base64
 import android.util.Log
 import android.view.View
 import android.view.ViewGroup
@@ -13,6 +16,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.RelativeLayout
 import android.widget.TextView
+import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -24,6 +28,7 @@ import okhttp3.Callback
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.Response
+import java.io.ByteArrayOutputStream
 import java.io.IOException
 
 class DashBoard_Customer : AppCompatActivity() {
@@ -45,7 +50,7 @@ class DashBoard_Customer : AppCompatActivity() {
     private lateinit var fetchurl : Request
     val url:String = "https://us-east-1.aws.data.mongodb-api.com/app/procurementx1-msxsm/endpoint/Plants"
     val DATAFETCHED = null;
-
+    val REQUEST_IMAGE_CAPTURE = 100
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dash_board_customer);
@@ -54,8 +59,18 @@ class DashBoard_Customer : AppCompatActivity() {
 
 
         card_scanplnat.setOnClickListener(View.OnClickListener {
-            val to : Intent = Intent(this@DashBoard_Customer,Scan::class.java)
-            startActivity(to)
+//            val to : Intent = Intent(this@DashBoard_Customer,Scan::class.java)
+//            startActivity(to)
+            val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+
+            try {
+
+                startActivityForResult(takePictureIntent,REQUEST_IMAGE_CAPTURE)
+            }catch (e:Exception)
+            {
+                Toast.makeText(this@DashBoard_Customer,"Error: " + e.localizedMessage,Toast.LENGTH_SHORT).show()
+            }
+
         })
         ok.newCall(fetchurl).enqueue(object : Callback{
             override fun onFailure(call: Call, e: IOException) {
@@ -138,6 +153,8 @@ class DashBoard_Customer : AppCompatActivity() {
 
 
 
+
+
 //        Handler(Looper.getMainLooper()).postDelayed({
 //            val to : Intent = Intent(this@DashBoard_Customer, DashBoard_Customer::class.java);
 //            startActivity(to);
@@ -145,6 +162,25 @@ class DashBoard_Customer : AppCompatActivity() {
 //        },1000);
 
     }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if(requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK){
+            val imageBitmap = data?.extras?.get("data") as Bitmap
+// Convert the image to a Base64 string
+            val base64Image = bitmapToBase64(imageBitmap)
+        }else
+            super.onActivityResult(requestCode, resultCode, data)
+
+    }
+
+    private fun bitmapToBase64(bitmap: Bitmap): String {
+        val byteArrayOutputStream = ByteArrayOutputStream()
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteArrayOutputStream)
+        val byteArray = byteArrayOutputStream.toByteArray()
+        return Base64.encodeToString(byteArray, Base64.DEFAULT)
+    }
+
+
     private fun init(){
         card_scanplnat = findViewById(R.id.card_scanplnat)
         card_myplants = findViewById(R.id.card_myplants)
