@@ -1,6 +1,7 @@
 package com.example.plantnexus_kt.Adapters
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.plantnexus_kt.Models.Plants
 import com.example.plantnexus_kt.R
+import com.example.plantnexus_kt.ScanResults
 
 class ProductAdaptor(val ProductList : ArrayList<Plants>,val mcontxt : Context) : RecyclerView.Adapter<ProductAdaptor.ViewH>() {
 
@@ -34,5 +36,11 @@ class ProductAdaptor(val ProductList : ArrayList<Plants>,val mcontxt : Context) 
     override fun onBindViewHolder(holder: ViewH, position: Int) {
         Glide.with(mcontxt).asBitmap().load(ProductList.get(position).plantImagePreview).into(holder.ImgHolder);
         holder.plantname.text = ProductList.get(position).plantname
+
+        holder.ImgHolder.setOnClickListener(View.OnClickListener {
+            val to :Intent = Intent(mcontxt,ScanResults::class.java)
+            to.putExtra("PRODUCTSELECTED",ProductList.get(position))
+            mcontxt.startActivity(to)
+        })
     }
 }

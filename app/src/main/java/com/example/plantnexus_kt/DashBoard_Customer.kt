@@ -12,7 +12,9 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.RelativeLayout
+import android.widget.TextView
 import androidx.cardview.widget.CardView
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.plantnexus_kt.Adapters.ProductAdaptor
@@ -36,6 +38,8 @@ class DashBoard_Customer : AppCompatActivity() {
     private lateinit var dragger        : RelativeLayout
     private lateinit var holderr        : RelativeLayout
     private lateinit var rec_products   : RecyclerView
+
+    private lateinit var rec_products_grid  : RecyclerView
     private lateinit var ok : OkHttpClient
     private  var click = false;
     private lateinit var fetchurl : Request
@@ -80,25 +84,47 @@ class DashBoard_Customer : AppCompatActivity() {
         rec_products.layoutManager = LinearLayoutManager(this@DashBoard_Customer,LinearLayoutManager.HORIZONTAL,false)
         rec_products.adapter = ADAPTER
 
+        rec_products_grid.layoutManager = GridLayoutManager(this@DashBoard_Customer,2);
+        rec_products_grid.adapter =ADAPTER
+
         dragger.setOnClickListener(View.OnClickListener {
             click=!click
+ //Plant page is in MInimized
+
             if(click.not()) {
+
                 val prams = RelativeLayout.LayoutParams(
                     RelativeLayout.LayoutParams.MATCH_PARENT,
                     450
                 )
                 prams.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM)
+
+
+                rec_products.layoutManager = LinearLayoutManager(this@DashBoard_Customer,LinearLayoutManager.HORIZONTAL,false)
                 holderr.layoutParams = prams
+                rec_products_grid.visibility= View.GONE
 
             }
             else
             {
+//Plant page is in Expanded
+                val tileprams = RelativeLayout.LayoutParams(
+                    RelativeLayout.LayoutParams.WRAP_CONTENT,
+                    RelativeLayout.LayoutParams.WRAP_CONTENT
+                )
+
+                tileprams.addRule(RelativeLayout.ALIGN_PARENT_TOP,50)
                 val prams = RelativeLayout.LayoutParams(
                     RelativeLayout.LayoutParams.MATCH_PARENT,
                     RelativeLayout.LayoutParams.MATCH_PARENT
                 )
                 prams.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM)
+
+
+                rec_products.layoutManager = LinearLayoutManager(this@DashBoard_Customer,LinearLayoutManager.HORIZONTAL,false)
+
                 holderr.layoutParams = prams
+                rec_products_grid.visibility= View.VISIBLE
 
             }
 
@@ -127,5 +153,6 @@ class DashBoard_Customer : AppCompatActivity() {
         rec_products = findViewById(R.id.products_dash)
         ok = OkHttpClient()
         fetchurl = Request.Builder().url(url).build()
+        rec_products_grid = findViewById(R.id.products_dash_grid)
     }
 }
