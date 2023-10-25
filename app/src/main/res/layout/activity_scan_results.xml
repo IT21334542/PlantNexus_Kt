@@ -9,6 +9,7 @@
 
     <RelativeLayout
         android:id="@+id/head_serach"
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
             <ImageView
@@ -20,6 +21,7 @@
             <ImageView
                 android:id="@+id/home_serach"
                 android:layout_alignParentEnd="true"
+                android:layout_marginEnd="-20dp"
                 android:layout_alignTop="@id/navigateback_serach"
                 android:src="@mipmap/home2_foreground"
                 android:layout_width="wrap_content"
@@ -30,6 +32,7 @@
 
     <RelativeLayout
         android:layout_below="@id/head_serach"
+        android:layout_marginTop="15dp"
         android:id="@+id/title_products_search"
         android:layout_width="match_parent"
         android:paddingEnd="30dp"
@@ -40,12 +43,14 @@
             android:id="@+id/Name_search"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/g2"
             android:text="PlantNammr"
             android:textSize="36sp"/>
         <TextView
             android:layout_alignParentEnd="true"
             android:id="@+id/varient_search"
             android:layout_width="wrap_content"
+            android:textColor="@color/g2"
             android:layout_height="wrap_content"
             android:text="plant"
             android:layout_below="@id/Name_search"
@@ -54,6 +59,7 @@
             android:layout_alignParentEnd="true"
             android:id="@+id/price_search"
             android:layout_width="wrap_content"
+            android:textColor="@color/g2"
             android:layout_height="wrap_content"
             android:text="1999.00"
             android:layout_marginTop="50dp"
@@ -64,6 +70,7 @@
             android:id="@+id/mode_search"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/g2"
             android:text="indoor"
             android:layout_marginTop="1dp"
             android:layout_below="@id/price_search"
@@ -76,8 +83,8 @@
     <RelativeLayout
         android:layout_marginTop="30dp"
         android:background="@drawable/desc_holder"
-        android:layout_below="@id/title_products_search"
         android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
         android:layout_height="500dp">
         <TextView
             android:id="@+id/plant_desc"
@@ -113,14 +120,15 @@
         android:layout_width="200dp"
         android:layout_height="250dp"
         app:cardCornerRadius="15dp"
-        android:layout_marginTop="110dp"
+        android:layout_marginTop="200dp"
         android:layout_marginStart="30dp"
         android:id="@+id/card_scan">
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <ImageView
-                android:id="@+id/scan"
+                android:id="@+id/productimg"
+                android:background="@color/main_green"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>
         </RelativeLayout>
