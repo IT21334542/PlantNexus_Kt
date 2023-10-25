@@ -54,7 +54,7 @@ class ScanResults : AppCompatActivity() {
         varient_search = findViewById(R.id.varient_search)
         price_search = findViewById(R.id.price_search)
         mode_search = findViewById(R.id.mode_search)
-        productimg = findViewById(R.id.scan)
+        productimg = findViewById(R.id.productimg)
         btnplaceOrder_search = findViewById(R.id.btnplaceOrder_search)
         Describtion =findViewById(R.id.plant_desc)
         Back =findViewById(R.id.navigateback_serach)

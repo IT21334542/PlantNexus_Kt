@@ -52,6 +52,11 @@ class DashBoard_Customer : AppCompatActivity() {
 
        init()
 
+
+        card_scanplnat.setOnClickListener(View.OnClickListener {
+            val to : Intent = Intent(this@DashBoard_Customer,Scan::class.java)
+            startActivity(to)
+        })
         ok.newCall(fetchurl).enqueue(object : Callback{
             override fun onFailure(call: Call, e: IOException) {
                e.printStackTrace()
