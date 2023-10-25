@@ -8,6 +8,7 @@ import android.os.Handler
 import android.os.Looper
 import android.util.Log
 import android.view.View
+import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.RelativeLayout
@@ -36,6 +37,7 @@ class DashBoard_Customer : AppCompatActivity() {
     private lateinit var holderr        : RelativeLayout
     private lateinit var rec_products   : RecyclerView
     private lateinit var ok : OkHttpClient
+    private  var click = false;
     private lateinit var fetchurl : Request
     val url:String = "https://us-east-1.aws.data.mongodb-api.com/app/procurementx1-msxsm/endpoint/Plants"
     val DATAFETCHED = null;
@@ -51,7 +53,8 @@ class DashBoard_Customer : AppCompatActivity() {
                e.printStackTrace()
             }
 
-            override fun onResponse(call: Call, response: Response) {
+            override fun onResponse(call: Call, response: Response)
+            {
                 val responseData = response.body?.string();
                 Log.d("DATAFEATCHED",responseData.toString());
 
@@ -76,6 +79,30 @@ class DashBoard_Customer : AppCompatActivity() {
         val ADAPTER = ProductAdaptor(PlantsList,this@DashBoard_Customer);
         rec_products.layoutManager = LinearLayoutManager(this@DashBoard_Customer,LinearLayoutManager.HORIZONTAL,false)
         rec_products.adapter = ADAPTER
+
+        dragger.setOnClickListener(View.OnClickListener {
+            click=!click
+            if(click.not()) {
+                val prams = RelativeLayout.LayoutParams(
+                    RelativeLayout.LayoutParams.MATCH_PARENT,
+                    450
+                )
+                prams.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM)
+                holderr.layoutParams = prams
+
+            }
+            else
+            {
+                val prams = RelativeLayout.LayoutParams(
+                    RelativeLayout.LayoutParams.MATCH_PARENT,
+                    RelativeLayout.LayoutParams.MATCH_PARENT
+                )
+                prams.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM)
+                holderr.layoutParams = prams
+
+            }
+
+        })
 
 
 
