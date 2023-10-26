@@ -46,6 +46,12 @@ class ScanResults : AppCompatActivity() {
         Describtion.text = plant.Description
 
 
+        btnplaceOrder_search.setOnClickListener(View.OnClickListener {
+            val to = Intent(this@ScanResults,PlaceOrder::class.java)
+            startActivity(to)
+        })
+
+
     }
 
     private fun init(){
