@@ -1,21 +1,14 @@
 package com.example.plantnexus_kt
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.Bitmap
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.provider.MediaStore
 import android.util.Base64
 import android.util.Log
 import android.view.View
-import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.LinearLayout
 import android.widget.RelativeLayout
-import android.widget.TextView
 import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.GridLayoutManager
@@ -25,9 +18,12 @@ import com.example.plantnexus_kt.Adapters.ProductAdaptor
 import com.example.plantnexus_kt.Models.Plants
 import okhttp3.Call
 import okhttp3.Callback
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.OkHttpClient
 import okhttp3.Request
+import okhttp3.RequestBody
 import okhttp3.Response
+import org.json.JSONObject
 import java.io.ByteArrayOutputStream
 import java.io.IOException
 
@@ -43,24 +39,30 @@ class DashBoard_Customer : AppCompatActivity() {
     private lateinit var dragger        : RelativeLayout
     private lateinit var holderr        : RelativeLayout
     private lateinit var rec_products   : RecyclerView
-
     private lateinit var rec_products_grid  : RecyclerView
     private lateinit var ok : OkHttpClient
     private  var click = false;
     private lateinit var fetchurl : Request
-    val url:String = "https://us-east-1.aws.data.mongodb-api.com/app/procurementx1-msxsm/endpoint/Plants"
+
+    val jsobj = JSONObject()
     val DATAFETCHED = null;
     val REQUEST_IMAGE_CAPTURE = 100
+    val JSON = ("application/json; charset=utf-8").toMediaTypeOrNull()
+
+    val url:String = "https://us-east-1.aws.data.mongodb-api.com/app/procurementx1-msxsm/endpoint/Plants"
+    val PlantScanURL ="https://plant.id/api/v3/identification"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dash_board_customer);
 
        init()
 
-
+//scan plant
         card_scanplnat.setOnClickListener(View.OnClickListener {
 //            val to : Intent = Intent(this@DashBoard_Customer,Scan::class.java)
 //            startActivity(to)
+
             val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 
             try {
@@ -72,15 +74,24 @@ class DashBoard_Customer : AppCompatActivity() {
             }
 
         })
+
+
+        card_myplants.setOnClickListener(View.OnClickListener {
+            val to : Intent = Intent(this@DashBoard_Customer,PlaceOrder::class.java)
+           startActivity(to)
+        })
+
+
         ok.newCall(fetchurl).enqueue(object : Callback{
-            override fun onFailure(call: Call, e: IOException) {
+            override fun onFailure(call: Call, e: IOException)
+            {
                e.printStackTrace()
             }
 
             override fun onResponse(call: Call, response: Response)
             {
-                val responseData = response.body?.string();
-                Log.d("DATAFEATCHED",responseData.toString());
+                val responseData = response.body?.string()
+                Log.d("DATAFEATCHED",responseData.toString())
 
             }
 
@@ -165,11 +176,57 @@ class DashBoard_Customer : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if(requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK){
+
+
             val imageBitmap = data?.extras?.get("data") as Bitmap
 // Convert the image to a Base64 string
             val base64Image = bitmapToBase64(imageBitmap)
+
+
+
+            if (base64Image!=null || base64Image != "")
+            {
+
+                jsobj.put("images",base64Image)
+
+                val Body : RequestBody = makeBody(jsobj)
+                val PlantRequest :Request =Request
+                    .Builder()
+                    .url(PlantScanURL)
+                    .addHeader("Api-Key","DQkaUHA1PCvxWvoxt0D1n4DJAA5mpi0VaOLm7Py2vo3Rd8K3UO")
+                    .post(Body)
+                    .build()
+
+                ok.newCall(PlantRequest).enqueue(object : Callback
+                {
+                    override fun onFailure(call: Call, e: IOException) {
+                        Log.d("PLANTIDENTIFICATION -  ERROR",e.toString())
+                    }
+
+                    override fun onResponse(call: Call, response: Response) {
+                        Log.d("PLANTIDENTIFICATION -  SUCESS ",response.toString())
+                    }
+
+                })
+
+
+
+
+
+            }
+
+
+
+
         }else
             super.onActivityResult(requestCode, resultCode, data)
+
+    }
+
+    private fun makeBody(a: JSONObject): RequestBody
+    {
+        val body = RequestBody.create(JSON,a.toString())
+        return body
 
     }
 
@@ -196,4 +253,7 @@ class DashBoard_Customer : AppCompatActivity() {
         fetchurl = Request.Builder().url(url).build()
         rec_products_grid = findViewById(R.id.products_dash_grid)
     }
+
+
+
 }

@@ -12,4 +12,6 @@
     <dimen name="register_details">34sp</dimen>
     <dimen name="registerseller">24sp</dimen>
     <dimen name="headerheight">40dp</dimen>
+    <dimen name="navigationicons">40dp</dimen>
+    <dimen name="navigationicons2">60dp</dimen>
 </resources>
