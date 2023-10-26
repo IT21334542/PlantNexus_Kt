@@ -69,13 +69,17 @@
                         android:layout_margin="5dp"/>
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/card_chatbot"
-                    android:layout_margin="2dp"
-                    android:layout_below="@id/card_scanplnat"
-                    android:layout_width="@dimen/dashcard_width"
-                    android:layout_height="@dimen/dashcard_height"
-                    android:backgroundTint="@color/g2"/>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_chatbot"
+                android:layout_width="@dimen/dashcard_width"
+                android:layout_height="@dimen/dashcard_height"
+                android:layout_below="@id/card_scanplnat"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="2dp"
+                android:backgroundTint="@color/g2" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_orders"
@@ -124,7 +128,27 @@
             android:layout_height="match_parent"
             android:background="@color/main_green"
             android:layout_toRightOf="@id/close_temp_details"
-            android:layout_marginStart="5dp"/>
+            android:layout_marginStart="5dp">
+            <TextView
+                android:text="hel"
+                android:textStyle="normal"
+                android:textColor="@color/g2"
+                android:layout_below="@id/tempPhase"
+                android:textSize="16sp"
+                android:textAlignment="center"
+                android:id="@+id/tempValue"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:text="hel"
+                android:textStyle="normal"
+                android:textColor="@color/g2"
+                android:textSize="16sp"
+                android:textAlignment="center"
+                android:id="@+id/tempPhase"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </RelativeLayout>
         <RelativeLayout
             android:id="@+id/LeftR"
             android:layout_width="5dp"
@@ -146,11 +170,7 @@
             android:id="@+id/reccomadation"/>
     </RelativeLayout>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
-    </RelativeLayout>
 
 <!--    <RelativeLayout-->
 <!--        android:layout_alignParentBottom="true"-->
@@ -166,6 +186,7 @@
 
         <RelativeLayout
             android:layout_above="@id/rec_holder_dash"
+            android:layout_below="@id/Tempholder_dash"
             android:layout_width="match_parent"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"

@@ -29,8 +29,9 @@ class ShopsAdaptor(val mcontxt : Context,val ShoppersList:ArrayList<Shops>): Rec
     }
 
     override fun getItemCount(): Int {
-        notifyDataSetChanged()
+
         return ShoppersList.size
+        notifyDataSetChanged()
     }
 
     override fun onBindViewHolder(holder: V, position: Int) {
