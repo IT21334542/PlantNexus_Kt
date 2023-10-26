@@ -1,6 +1,7 @@
 package com.example.plantnexus_kt
 
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,13 +10,17 @@ import android.util.Base64
 import android.util.Log
 import android.view.View
 import android.widget.RelativeLayout
+import android.widget.TextView
 import android.widget.Toast
 import androidx.cardview.widget.CardView
+import androidx.core.app.ActivityCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.plantnexus_kt.Adapters.ProductAdaptor
 import com.example.plantnexus_kt.Models.Plants
+import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationServices
 import okhttp3.Call
 import okhttp3.Callback
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
@@ -23,6 +28,7 @@ import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.RequestBody
 import okhttp3.Response
+import org.json.JSONArray
 import org.json.JSONObject
 import java.io.ByteArrayOutputStream
 import java.io.IOException
@@ -43,6 +49,9 @@ class DashBoard_Customer : AppCompatActivity() {
     private lateinit var ok : OkHttpClient
     private  var click = false;
     private lateinit var fetchurl : Request
+    private lateinit var Temp :TextView
+    private lateinit var phaseT :TextView
+    private lateinit var LocationP : FusedLocationProviderClient
 
     val jsobj = JSONObject()
     val DATAFETCHED = null;
@@ -57,6 +66,12 @@ class DashBoard_Customer : AppCompatActivity() {
         setContentView(R.layout.activity_dash_board_customer);
 
        init()
+
+
+
+
+
+
 
 //scan plant
         card_scanplnat.setOnClickListener(View.OnClickListener {
@@ -126,7 +141,7 @@ class DashBoard_Customer : AppCompatActivity() {
 
                 val prams = RelativeLayout.LayoutParams(
                     RelativeLayout.LayoutParams.MATCH_PARENT,
-                    450
+                    710
                 )
                 prams.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM)
 
@@ -204,7 +219,8 @@ class DashBoard_Customer : AppCompatActivity() {
                     }
 
                     override fun onResponse(call: Call, response: Response) {
-                        Log.d("PLANTIDENTIFICATION -  SUCESS ",response.toString())
+                        Log.d("PLANTIDENTIFICATION -  SUCESS-64 ",base64Image)
+                        Log.d("PLANTIDENTIFICATION -  SUCESS ",response.body?.string().toString())
                     }
 
                 })
@@ -252,8 +268,66 @@ class DashBoard_Customer : AppCompatActivity() {
         ok = OkHttpClient()
         fetchurl = Request.Builder().url(url).build()
         rec_products_grid = findViewById(R.id.products_dash_grid)
+        phaseT =findViewById(R.id.tempPhase)
+        LocationP = LocationServices.getFusedLocationProviderClient(this@DashBoard_Customer)
+        Temp = findViewById(R.id.tempValue)
+        getLocation()
     }
 
+    private fun getLocation() {
+
+        if ((ActivityCompat.checkSelfPermission(
+                this@DashBoard_Customer,
+                android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) &&
+            (ActivityCompat.checkSelfPermission(
+                this@DashBoard_Customer,
+                android.Manifest.permission.ACCESS_COARSE_LOCATION)!= PackageManager.PERMISSION_GRANTED)
+           ){
+            ActivityCompat.requestPermissions(this,
+                arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION, android.Manifest.permission.ACCESS_COARSE_LOCATION),
+                100)
+            return
+        }
+
+
+        val loca =  LocationP.lastLocation
+        loca.addOnSuccessListener {
+            if (it!=null)
+            {
+                val Lati = it.latitude
+                val logi = it.longitude
+                val url = "https://atlas.microsoft.com/weather/currentConditions/json?api-version=1.0&query="+Lati+","+logi+"&subscription-key=Je5NT-QjhXQy0qCVwklWqvRNir1R1GkOHXnGpM9_V3A"
+                val request = Request.Builder().url(url).build()
+
+                ok.newCall(request).enqueue(object : Callback
+                {
+                    override fun onFailure(call: Call, e: IOException) {
+                        Log.d("TEMPFEATCH-FAIL",e.toString())
+                    }
+
+                    override fun onResponse(call: Call, response: Response) {
+
+                        val Jobject = JSONObject(response.body?.string());
+
+                        val JResults :JSONArray = Jobject.get("results") as JSONArray
+
+                        val JCommit = JResults.get(0) as JSONObject
+
+                        val phase = JCommit.getString("phrase")
+                        val Tempuratur = JCommit.get("temperature") as JSONObject
+                        val Value = Tempuratur.getString("value")
+                        //val name :String = phase +"\n"+Value
+                        Temp.text = Value
+                        phaseT.text = phase
+                        Log.d("TEMPFEATCH-SUCESS",phase+Value)
+                    }
+
+                })
+
+            }
+        }
+
+    }
 
 
 }
