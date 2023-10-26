@@ -17,9 +17,7 @@ dependencyResolutionManagement {
 
     }
 }
-realm {
-    syncEnabled = true
-}
+
 
 rootProject.name = "PlantNexus_Kt"
 include(":app")
