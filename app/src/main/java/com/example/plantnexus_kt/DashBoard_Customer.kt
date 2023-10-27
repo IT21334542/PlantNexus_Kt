@@ -261,8 +261,30 @@ class DashBoard_Customer : AppCompatActivity() {
                     }
 
                     override fun onResponse(call: Call, response: Response) {
-                        Log.d("PLANTIDENTIFICATION -  SUCESS-64 ",base64Image)
-                        Log.d("PLANTIDENTIFICATION -  SUCESS ",response.body?.string().toString())
+                        //Log.d("PLANTIDENTIFICATION -  SUCESS-64 ",base64Image)
+                        //Log.d("PLANTIDENTIFICATION -  SUCESS ",response.body?.string().toString())
+                        val res = JSONObject(response.body?.string())
+                        val inputObject = res.getJSONObject("input")
+                        val classifications = res.getJSONObject("result")
+                        val customfromClassification = classifications.getJSONObject("classification")
+                        val Suggestions = customfromClassification.getJSONArray("suggestions")
+                        val mostProb = Suggestions.getJSONObject(0)
+                        val PlantName = mostProb.getString("name")
+                        val image = inputObject.getJSONArray("images")
+                        val Url = image.getString(0)
+
+                        val p1 = Plants(
+                            PlantName,
+                            Url,
+                            0.00,
+                            ""
+                        )
+
+                        val to = Intent(this@DashBoard_Customer,SearchResults_nexus::class.java)
+                        to.putExtra("Plant",p1)
+                        startActivity(to)
+                        //val CapturedImage = inputObject.getJSONArray("images")
+                       // Log.d("PLANTIDENTIFICATION -  SUCESS ",Url.toString())
                     }
 
                 })
