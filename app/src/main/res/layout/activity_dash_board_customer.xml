@@ -96,6 +96,7 @@
     </RelativeLayout>
 
     <RelativeLayout
+        android:visibility="gone"
         android:layout_marginTop="20dp"
         android:layout_below="@id/DashNavCards"
         android:id="@+id/Tempholder_dash"
@@ -110,6 +111,7 @@
                 android:layout_height="match_parent"
                >
                 <ImageView
+                    android:id="@+id/close_Temp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:src="@mipmap/arrow_icon_foreground"/>
@@ -170,6 +172,21 @@
             android:id="@+id/reccomadation"/>
     </RelativeLayout>
 
+    <RelativeLayout
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/DashNavCards"
+        android:id="@+id/Tempholder_dash_minMized"
+        android:background="@drawable/temp_card"
+        android:layout_alignParentEnd="true"
+        android:layout_width="50dp"
+        android:layout_height="40dp">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@mipmap/arrowback_foreground"/>
+    </RelativeLayout>
+
 
 
 <!--    <RelativeLayout-->
@@ -186,7 +203,7 @@
 
         <RelativeLayout
             android:layout_above="@id/rec_holder_dash"
-            android:layout_below="@id/Tempholder_dash"
+            android:layout_below="@id/Tempholder_dash_minMized"
             android:layout_width="match_parent"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"

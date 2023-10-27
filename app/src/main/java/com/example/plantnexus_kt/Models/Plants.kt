@@ -7,5 +7,6 @@ data class Plants(val plantname:String,
                   val plantPrice:Double,
                   val Description:String="Dectiption of the plant",
                   val Mode:String = "indoor",
-                  val varient :String = "plant"
+                  val varient :String = "plant",
+                  var qty : Int = 0
     ) : Serializable

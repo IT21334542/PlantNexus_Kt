@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".OnShop">
+
+    <ImageView
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:id="@+id/back_or"
+        android:layout_width="@dimen/navigationicons"
+        android:layout_height="@dimen/navigationicons"
+        android:src="@mipmap/navback_foreground"/>
+
+    <ImageView
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="15dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/home_or"
+        android:layout_width="@dimen/navigationicons2"
+        android:layout_height="@dimen/navigationicons2"
+        android:src="@mipmap/homeicon_foreground"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/ProductRec"
+        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/belower"
+        android:layout_below="@id/home_or"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp" />
+
+    <RelativeLayout
+        android:id="@+id/belower"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounderdtop"
+        android:layout_alignParentBottom="true">
+        <ImageView
+            android:visibility="gone"
+            android:layout_alignParentTop="true"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:src="@mipmap/arrodown_foreground"
+            android:id="@+id/btnMinim"/>
+
+        <RelativeLayout
+            android:id="@+id/rec_holder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnMinim"
+            >
+            <androidx.recyclerview.widget.RecyclerView
+                android:visibility="gone"
+                android:id="@+id/rec_card"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"/>
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/btnExpand"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_below="@id/rec_holder"
+            android:layout_marginTop="-1dp"
+            android:src="@mipmap/arrowup_foreground"/>
+
+        <TextView
+            android:layout_below="@id/btnExpand"
+            android:id="@+id/cardTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TOTAL : "
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:layout_marginStart="20dp"
+            />
+        <TextView
+            android:id="@+id/carditems"
+            android:layout_below="@id/cardTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ITEMS : "
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="20dp"
+            />
+
+
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>
