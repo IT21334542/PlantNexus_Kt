@@ -59,16 +59,28 @@
             android:layout_height="wrap_content"
             android:text="tile"
             android:textColor="@color/white"
-            android:textSize="30sp"
+            android:textSize="20sp"
             android:layout_centerHorizontal="true"
             android:layout_below="@id/srchtxt"/>
+
         <TextView
+            android:id="@+id/txtname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@id/txttiltle"
-            android:layout_marginTop="2dp"
-            android:layout_width="match_parent"
-            android:layout_height="120dp"
+            android:text="name"
             android:textColor="@color/white"
-            android:id="@+id/aboutplant"/>
+            android:layout_marginTop="0dp"
+            android:textSize="18sp" />
+
+
+        <TextView
+            android:id="@+id/aboutplant"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:layout_below="@id/txtname"
+            android:layout_marginTop="0dp"
+            android:textColor="@color/white" />
 
 
     </RelativeLayout>
