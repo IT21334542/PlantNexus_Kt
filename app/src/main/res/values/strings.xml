@@ -17,4 +17,8 @@
     <string name="deliveryboy">Delivery Boy</string>
     <string name="dname">Vitharshan</string>
     <string name="scan">Take Picture</string>
+    <string name="gardenguru">Garden Guru</string>
+    <string name="garden_guru">Garden Guru</string>
+    <string name="user">User</string>
+    <string name="ask_anything">Ask anything</string>
 </resources>

@@ -1,3 +1,4 @@
+
 pluginManagement {
     repositories {
         google()
@@ -16,6 +17,7 @@ dependencyResolutionManagement {
 
     }
 }
+
 
 rootProject.name = "PlantNexus_Kt"
 include(":app")

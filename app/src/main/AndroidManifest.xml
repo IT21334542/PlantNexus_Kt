@@ -15,7 +15,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PlantNexus_Kt"
-        tools:targetApi="31">
+        tools:targetApi="31"> 
+        <activity
+            android:name=".GardenGuru
+            android:exported="false"/>
         <activity
             android:name=".OnShop"
             android:exported="false" />
@@ -64,6 +67,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

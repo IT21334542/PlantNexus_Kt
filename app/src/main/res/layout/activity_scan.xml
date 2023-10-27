@@ -48,18 +48,22 @@
 
     </androidx.cardview.widget.CardView>
 
-    <Button
-        android:id="@+id/btn_scan"
-        android:layout_width="215dp"
-        android:layout_height="79dp"
-        android:layout_below="@id/card_scan"
-        android:layout_alignBaseline="@id/card_scan"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="5dp"
-        android:backgroundTint="#228863"
-        android:text="@string/scan"
-        android:textAlignment="center"
-        android:textSize="24sp" />
+    <RelativeLayout
+        android:id="@+id/head_serach1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/card_scan">
 
+        <Button
+            android:id="@+id/btn_scan"
+            android:layout_width="215dp"
+            android:layout_height="79dp"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="5dp"
+            android:backgroundTint="#228863"
+            android:text="@string/scan"
+            android:textAlignment="center"
+            android:textSize="24sp" />
+    </RelativeLayout>
 
 </RelativeLayout>

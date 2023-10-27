@@ -1,12 +1,12 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+
 }
 
 android {
     namespace = "com.example.plantnexus_kt"
     compileSdk = 34
-
     defaultConfig {
         applicationId = "com.example.plantnexus_kt"
         minSdk = 24
@@ -33,9 +33,12 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+
 }
 
 dependencies {
+
 
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.6.1")

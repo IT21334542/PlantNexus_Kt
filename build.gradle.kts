@@ -5,11 +5,7 @@ plugins {
 
 }
 
-buildscript{
-    dependencies {
-        classpath  ("io.realm:realm-gradle-plugin:10.0.0-BETA.8")
-    }
-}
+
 
 
 
