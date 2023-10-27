@@ -18,12 +18,13 @@
             android:layout_marginTop="15dp"
             android:layout_height="@dimen/headerheight"/>
         <ImageView
-            android:id="@+id/home_serach"
             android:layout_alignParentEnd="true"
-            android:layout_alignTop="@id/navigateback_serach"
-            android:src="@mipmap/home2_foreground"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/headerheight"/>
+            android:layout_marginEnd="15dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/home_or"
+            android:layout_width="@dimen/navigationicons2"
+            android:layout_height="@dimen/navigationicons2"
+            android:src="@mipmap/homeicon_foreground"/>
 
     </RelativeLayout>
     <RelativeLayout
@@ -32,6 +33,10 @@
         android:layout_width="match_parent"
         android:background="@color/c1"
         android:layout_height="300dp">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/imgsP"/>
 
     </RelativeLayout>
     <RelativeLayout
