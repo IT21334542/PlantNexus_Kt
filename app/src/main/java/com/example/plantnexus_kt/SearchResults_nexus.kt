@@ -80,7 +80,7 @@ class SearchResults_nexus : AppCompatActivity() {
 
     private fun getResponse(question: String, callback: (String) -> Unit) {
 
-        val apiKey = "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"
+        val apiKey = "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"
         val url = "https://api.openai.com/v1/engines/text-davinci-003/completions"
 
         val requestBody = """
