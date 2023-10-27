@@ -10,15 +10,25 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="383dp"
+        android:layout_height="331dp"
         android:src="@mipmap/app_logo_foreground" />
+
+    <ImageView
+        android:id="@+id/google"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:srcCompat="@drawable/google" />
 
     <EditText
         android:id="@+id/username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="#5EFFFFFF"
+        android:drawableStart="@drawable/person"
+        android:drawablePadding="20dp"
         android:hint="@string/username"
-        android:textAlignment="center"
+        android:padding="20dp"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
         android:textSize="30sp" />
@@ -27,14 +37,19 @@
         android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="#5EFFFFFF"
+        android:drawableStart="@drawable/password"
+        android:drawablePadding="20dp"
         android:ems="10"
         android:hint="@string/password"
         android:inputType="textPassword"
-        android:textAlignment="center"
+        android:padding="20dp"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
         android:textSize="30sp"
         tools:text="@string/password" />
+
 
     <Button
         android:id="@+id/login"

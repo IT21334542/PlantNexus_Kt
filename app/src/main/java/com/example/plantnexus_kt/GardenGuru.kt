@@ -9,7 +9,6 @@ import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.ListView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import com.google.android.material.textfield.TextInputEditText
 import okhttp3.Call
@@ -68,7 +67,7 @@ class GardenGuru : AppCompatActivity() {
         })
 
         home.setOnClickListener {
-            startActivity(Intent(this@GardenGuru, Login::class.java))
+            startActivity(Intent(this@GardenGuru,Login::class.java))
         }
 
     }
