@@ -388,8 +388,17 @@ class DashBoard_Customer : AppCompatActivity() {
                         Temp.text = Value
                         phaseT.text = phase
                         Log.d("TEMPFEATCH-SUCESS",phase+Value)
+
+
                     }
 
+                })
+
+                phaseT.setOnClickListener(View.OnClickListener {
+                    val to  = Intent(this@DashBoard_Customer,TempActivity::class.java)
+                    to.putExtra("Lati",Lati)
+                    to.putExtra("Longi",logi)
+                    startActivity(to)
                 })
 
             }

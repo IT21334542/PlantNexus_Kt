@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".TempActivity">
@@ -38,7 +39,7 @@
             android:layout_height="100dp"
             android:layout_centerHorizontal="true"
             android:layout_below="@id/home_or"
-            android:background="@color/g2"/>
+            />
 
         <TextView
             android:id="@+id/mini"
@@ -91,8 +92,61 @@
             android:layout_toRightOf="@id/CelciusValue"
             android:textColor="@color/g2"
             android:id="@+id/degree"/>
-        
-  
+
+
+        <TextView
+            android:layout_marginTop="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hum:"
+            android:textColor="@color/g2"
+            android:textSize="24sp"
+            android:layout_below="@id/CelciusValue"
+        android:id="@+id/Humidity"
+            android:layout_marginStart="25dp"/>
+
+        <TextView
+            android:layout_alignTop="@id/Humidity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hum:"
+            android:textColor="@color/g2"
+            android:textSize="24sp"
+            android:layout_toRightOf="@id/Humidity"
+            android:layout_below="@id/CelciusValue"
+            android:id="@+id/HumidityV"
+            android:layout_marginStart="5dp"/>
+
+
+        <TextView
+            android:layout_alignParentEnd="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DewV:"
+            android:textColor="@color/g2"
+            android:textSize="24sp"
+            android:layout_below="@id/CelciusValue"
+            android:id="@+id/DewPointV"
+            android:layout_alignTop="@id/Humidity"
+            android:layout_marginEnd="25dp"/>
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DewV:"
+            android:layout_toLeftOf="@id/DewPointV"
+            android:textColor="@color/g2"
+            android:textSize="24sp"
+            android:layout_below="@id/CelciusValue"
+            android:id="@+id/DewPoint"
+            android:layout_alignTop="@id/Humidity"
+            android:layout_marginEnd="25dp"/>
+
+
+
+
+
 
 
     </RelativeLayout>
@@ -102,6 +156,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Guidences"
+        android:textColor="@color/g2"
         android:textSize="30sp"
         android:layout_marginTop="10dp"
         android:layout_below="@id/MiddleCard"
@@ -112,6 +167,7 @@
         android:layout_height="wrap_content"
         android:text="Watering recommendation : LOW"
         android:textSize="20sp"
+        android:textColor="@color/g2"
         android:layout_marginTop="20dp"
         android:layout_below="@id/txtGuidene"
         android:layout_marginStart="20dp"/>
