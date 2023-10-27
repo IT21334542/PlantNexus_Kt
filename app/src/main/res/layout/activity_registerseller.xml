@@ -26,6 +26,7 @@
             android:layout_marginTop="4dp"
             android:layout_marginEnd="275dp"
             android:layout_marginBottom="24dp"
+            android:backgroundTint="#00FFFFFF"
             app:srcCompat="@drawable/cross_in_foreground" />
 
         <TextView
@@ -33,6 +34,7 @@
             android:layout_width="169dp"
             android:layout_height="wrap_content"
             android:text="@string/welcome_community"
+            android:textColor="@color/black"
             android:textSize="24sp" />
     </LinearLayout>
 
@@ -54,9 +56,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="52dp"
             android:ems="10"
+            android:hint="@string/storename"
             android:inputType="text"
-            android:text="@string/storename"
             android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
             android:textSize="@dimen/registerseller" />
 
         <EditText
@@ -64,9 +68,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:hint="@string/address"
             android:inputType="text"
-            android:text="@string/address"
             android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
             android:textSize="@dimen/registerseller" />
 
         <EditText
@@ -74,9 +80,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:hint="@string/fullname"
             android:inputType="text"
-            android:text="@string/fullname"
             android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
             android:textSize="@dimen/registerseller" />
 
         <EditText
@@ -84,9 +92,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:hint="@string/phone"
             android:inputType="phone"
-            android:text="@string/phone"
             android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
             android:textSize="@dimen/registerseller" />
 
         <Spinner

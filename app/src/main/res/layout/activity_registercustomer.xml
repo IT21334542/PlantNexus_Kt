@@ -26,13 +26,16 @@
             android:layout_marginTop="4dp"
             android:layout_marginEnd="275dp"
             android:layout_marginBottom="24dp"
-            app:srcCompat="@drawable/cross_in_foreground" />
+            android:backgroundTint="#00FFFFFF"
+            app:srcCompat="@drawable/cross_in_foreground"
+            android:contentDescription="@string/navigate_to_regsiter_choose" />
 
         <TextView
             android:id="@+id/welcome"
             android:layout_width="169dp"
             android:layout_height="wrap_content"
             android:text="@string/welcome_community"
+            android:textColor="@color/black"
             android:textSize="24sp" />
     </LinearLayout>
 
@@ -48,47 +51,66 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
-        <EditText
-            android:id="@+id/fullname"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="52dp"
-            android:ems="10"
-            android:inputType="text"
-            android:text="@string/fullname"
-            android:textAlignment="center"
-            android:textSize="@dimen/register_details" />
 
         <EditText
-            android:id="@+id/username"
-            android:layout_width="wrap_content"
+            android:id="@+id/fullname"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="text"
-            android:text="@string/username"
-            android:textAlignment="center"
-            android:textSize="@dimen/register_details" />
+            android:layout_margin="10dp"
+            android:background="#5EFFFFFF"
+            android:drawableStart="@drawable/person"
+            android:drawablePadding="20dp"
+            android:hint="@string/fullname"
+            android:padding="20dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textSize="30sp" />
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="#5EFFFFFF"
+            android:drawableStart="@drawable/person"
+            android:drawablePadding="20dp"
+            android:hint="@string/username"
+            android:padding="20dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textSize="30sp" />
 
         <EditText
             android:id="@+id/password_register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="#5EFFFFFF"
+            android:drawableStart="@drawable/pass"
+            android:drawablePadding="20dp"
             android:ems="10"
             android:hint="@string/password"
             android:inputType="textPassword"
-            android:text="@string/password"
-            android:textAlignment="center"
-            android:textSize="@dimen/password" />
-
+            android:padding="20dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textSize="30sp" />
         <EditText
             android:id="@+id/phonenumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="#5EFFFFFF"
+            android:drawableStart="@drawable/phone"
+            android:drawablePadding="20dp"
             android:ems="10"
+            android:hint="@string/phone"
+            android:padding="20dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
             android:inputType="phone"
-            android:text="@string/phone"
-            android:textAlignment="center"
-            android:textSize="@dimen/password" />
+            android:textSize="30sp" />
+
+
 
         <Button
             android:id="@+id/next"
@@ -104,7 +126,8 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="152dp"
-            android:src="@mipmap/app_logo_foreground" />
+            android:src="@mipmap/app_logo_foreground"
+            android:contentDescription="@string/app_name" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

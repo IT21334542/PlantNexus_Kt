@@ -13,7 +13,8 @@
         android:layout_width="match_parent"
         android:layout_height="279dp"
         android:layout_gravity="center_horizontal"
-        android:src="@mipmap/app_logo_foreground" />
+        android:src="@mipmap/app_logo_foreground"
+        android:contentDescription="@string/logo_of_plantnexus" />
 
     <TextView
         android:id="@+id/Register"
@@ -22,6 +23,7 @@
         android:gravity="center"
         android:text="@string/register"
         android:textAlignment="center"
+        android:textColor="@color/black"
         android:textSize="34sp" />
 
     <LinearLayout
@@ -50,6 +52,7 @@
             android:gravity="center"
             android:text="@string/registeras"
             android:textAlignment="center"
+            android:textColor="@color/black"
             android:textSize="24sp" />
 
         <androidx.cardview.widget.CardView
@@ -74,19 +77,45 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <ImageButton
-            android:id="@+id/customer"
-            android:layout_width="173dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            tools:srcCompat="@tools:sample/backgrounds/scenic" />
-
-        <ImageButton
-            android:id="@+id/seller"
-            android:layout_width="180dp"
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
             android:layout_height="172dp"
-            android:layout_weight="1"
-            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+            android:background="#00FFFFFF"
+            android:backgroundTint="#00FFFFFF"
+            app:cardCornerRadius="20dp">
+
+            <ImageButton
+                android:id="@+id/customer"
+                android:layout_width="203dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:backgroundTint="#738C77"
+                android:contentDescription="@string/customer"
+                android:scaleType="fitCenter"
+                android:src="@drawable/customer"
+                tools:srcCompat="@drawable/customer" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="172dp"
+            android:backgroundTint="#00FFFFFF"
+            app:cardCornerRadius="20dp">
+
+            <ImageButton
+                android:id="@+id/seller"
+                android:layout_width="203dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:backgroundTint="#738C77"
+                android:contentDescription="@string/seller"
+                android:scaleType="fitCenter"
+                android:src="@drawable/seller"
+                tools:src="@drawable/seller" />
+        </androidx.cardview.widget.CardView>
+
     </LinearLayout>
 
     <Button

@@ -6,38 +6,40 @@
     android:layout_height="match_parent"
     android:background="@drawable/background_gradient_green_white"
     tools:context=".GardenGuru">
-    <RelativeLayout
+
+    <LinearLayout
         android:id="@+id/head_serach"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/gardenGuru"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/headerheight"
-            android:layout_alignTop="@id/navigateback_serach"
-            android:fontFamily="@font/adamina"
-            android:textAlignment="center"
-            android:textSize="24sp"
-            tools:text="@string/gardenguru" />
-
         <ImageView
             android:id="@+id/navigateback_serach"
-            android:src="@mipmap/navback_foreground"
             android:layout_width="60dp"
+            android:layout_height="@dimen/headerheight"
             android:layout_marginTop="15dp"
-            android:layout_height="@dimen/headerheight"/>
+            android:src="@mipmap/navback_foreground" />
+
+        <TextView
+            android:id="@+id/gardenGuru"
+            android:layout_width="290dp"
+            android:layout_height="@dimen/headerheight"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="1dp"
+            android:fontFamily="@font/adamina"
+            android:text="@string/garden_guru"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
 
         <ImageView
             android:id="@+id/home_serach"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="-20dp"
-            android:layout_alignTop="@id/navigateback_serach"
-            android:src="@mipmap/home2_foreground"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/headerheight"/>
+            android:layout_width="63dp"
+            android:layout_height="@dimen/headerheight"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="-3dp"
+            android:src="@mipmap/home2_foreground" />
 
-    </RelativeLayout>
+    </LinearLayout>
     <LinearLayout
         android:id="@+id/listview"
         android:layout_below="@id/head_serach"
@@ -72,38 +74,56 @@
             android:orientation="vertical">
 
             <LinearLayout
-                android:layout_width="403dp"
-                android:layout_height="97dp"
+                android:layout_width="match_parent"
+                android:layout_height="69dp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/idTVQuestion"
-                    android:layout_width="315dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="30dp"
-                    android:padding="4dp"
+                    android:layout_width="337dp"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="15dp"
                     android:text="@string/user"
                     android:textAlignment="textEnd"
                     android:textColor="@color/black"
                     android:textSize="@dimen/guru" />
 
+
                 <ImageView
                     android:id="@+id/userimg"
-                    android:layout_width="80dp"
-                    android:layout_height="wrap_content"
+                    android:layout_width="45dp"
+                    android:layout_height="match_parent"
                     android:contentDescription="@string/user"
+                    android:src="@drawable/userchat"
+                    android:visibility="visible"
                     tools:srcCompat="@drawable/userchat" />
             </LinearLayout>
 
-
-            <TextView
-                android:id="@+id/txtResponse"
+            <LinearLayout
+                android:id="@+id/ailayout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:padding="4dp"
-                android:text="@string/garden_guru"
-                android:textColor="@color/black"
-                android:textSize="@dimen/guru" />
+                android:orientation="horizontal">
+
+
+                <ImageView
+                    android:id="@+id/aimg"
+                    android:layout_width="61dp"
+                    android:layout_height="39dp"
+                    android:contentDescription="@string/user"
+                    android:src="@drawable/ai"
+                    android:visibility="visible"
+                    tools:srcCompat="@drawable/ai" />
+
+                <TextView
+                    android:id="@+id/txtResponse"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="4dp"
+                    android:text="@string/garden_guru"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/guru" />
+            </LinearLayout>
 
 
         </LinearLayout>
