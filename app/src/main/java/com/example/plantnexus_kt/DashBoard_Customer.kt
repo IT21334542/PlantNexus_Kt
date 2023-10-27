@@ -101,6 +101,21 @@ class DashBoard_Customer : AppCompatActivity() {
                     PlantsList.add(p1)
                 }
 
+                runOnUiThread( object : Runnable
+                {
+                    override fun run() {
+                        val ADAPTER = ProductAdaptor(PlantsList,this@DashBoard_Customer);
+                        rec_products.layoutManager = LinearLayoutManager(this@DashBoard_Customer,LinearLayoutManager.HORIZONTAL,false)
+                        rec_products.adapter = ADAPTER
+
+                        rec_products_grid.layoutManager = GridLayoutManager(this@DashBoard_Customer,2);
+                        rec_products_grid.adapter =ADAPTER
+                    }
+
+                })
+
+
+
 
             }
 
@@ -168,12 +183,12 @@ class DashBoard_Customer : AppCompatActivity() {
 
 
 
-        val ADAPTER = ProductAdaptor(PlantsList,this@DashBoard_Customer);
-        rec_products.layoutManager = LinearLayoutManager(this@DashBoard_Customer,LinearLayoutManager.HORIZONTAL,false)
-        rec_products.adapter = ADAPTER
-
-        rec_products_grid.layoutManager = GridLayoutManager(this@DashBoard_Customer,2);
-        rec_products_grid.adapter =ADAPTER
+//        val ADAPTER = ProductAdaptor(PlantsList,this@DashBoard_Customer);
+//        rec_products.layoutManager = LinearLayoutManager(this@DashBoard_Customer,LinearLayoutManager.HORIZONTAL,false)
+//        rec_products.adapter = ADAPTER
+//
+//        rec_products_grid.layoutManager = GridLayoutManager(this@DashBoard_Customer,2);
+//        rec_products_grid.adapter =ADAPTER
 
         dragger.setOnClickListener(View.OnClickListener {
             click=!click
