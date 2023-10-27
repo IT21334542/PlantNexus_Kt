@@ -2,7 +2,7 @@
 <androidx.cardview.widget.CardView
         android:id="@+id/Plantcardone"
         android:background="@color/c1"
-        android:backgroundTint="@color/c1"
+        android:backgroundTint="@color/white"
         android:layout_margin="5dp"
         app:cardCornerRadius="20dp"
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -22,13 +22,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="PLANT TEXT"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"
                 android:layout_alignParentBottom="true"
                 android:layout_marginBottom="15dp"
                 android:textAllCaps="true"
-                android:background="@color/white"
-                android:textColor="@color/g2"
+                android:background="@color/c1"
+                android:textColor="@color/white"
                 android:textAlignment="center"
                 android:textSize="16sp"/>
         </RelativeLayout>
