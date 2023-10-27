@@ -68,6 +68,27 @@ class DashBoard_Customer : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dash_board_customer);
 
+        val urlPlants = "https://us-east-1.aws.data.mongodb-api.com/app/procurementx1-msxsm/endpoint/Plants";
+        val PlantsFetchRequest = Request.Builder().url(urlPlants).build();
+        val axios = OkHttpClient()
+        axios.newCall(PlantsFetchRequest).enqueue(object :Callback
+        {
+            override fun onFailure(call: Call, e: IOException) {
+                Log.d("PLANTFEATCH - ERROR :",e.toString())
+            }
+
+            override fun onResponse(call: Call, response: Response) {
+                //val response = response.body?.string() as;
+                val response =
+                Log.d("PLANTFEATCH -  SUCESS ",response.toString())
+            }
+
+        })
+
+
+
+
+
        init()
 
 
@@ -76,6 +97,10 @@ class DashBoard_Customer : AppCompatActivity() {
             TempCard.visibility = View.INVISIBLE;
         })
 
+
+        card_chatbot.setOnClickListener(View.OnClickListener {
+            startActivity(Intent(this@DashBoard_Customer,GardenGuru::class.java))
+        })
 
 
 

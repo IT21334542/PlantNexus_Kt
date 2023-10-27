@@ -17,7 +17,7 @@
         android:theme="@style/Theme.PlantNexus_Kt"
         tools:targetApi="31"> 
         <activity
-            android:name=".GardenGuru
+            android:name=".GardenGuru"
             android:exported="false"/>
         <activity
             android:name=".OnShop"
