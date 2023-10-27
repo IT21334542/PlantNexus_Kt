@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TempActivity">
+
+
+    <RelativeLayout
+        android:id="@+id/topCard"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@color/main_green">
+
+        <ImageView
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:id="@+id/back_or"
+            android:layout_width="@dimen/navigationicons"
+            android:layout_height="@dimen/navigationicons"
+            android:src="@mipmap/navback_foreground"/>
+
+        <ImageView
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="15dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/home_or"
+            android:layout_width="@dimen/navigationicons2"
+            android:layout_height="@dimen/navigationicons2"
+            android:src="@mipmap/homeicon_foreground"/>
+
+
+        <ImageView
+            android:id="@+id/tempPhases"
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/home_or"
+            android:background="@color/g2"/>
+
+        <TextView
+            android:id="@+id/mini"
+            android:layout_below="@id/tempPhases"
+            android:layout_marginTop="3dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="highCloudy"
+            android:fontFamily="@font/adamina"
+            android:textSize="16sp"
+            android:textColor="@color/g2"
+            android:textAlignment="center"/>
+        <TextView
+            android:id="@+id/location"
+            android:layout_below="@id/mini"
+            android:layout_marginTop="3dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="MALABE"
+            android:fontFamily="@font/adamina"
+            android:textSize="36sp"
+            android:textColor="@color/g2"
+            android:textAlignment="center"/>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@color/c1"
+        android:layout_below="@id/topCard"
+        android:id="@+id/MiddleCard">
+
+        <TextView
+            android:id="@+id/CelciusValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="15"
+            android:textSize="90sp"
+            android:textColor="@color/g2"
+            android:layout_marginTop="40dp"
+            android:layout_centerHorizontal="true"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="40sp"
+            android:layout_marginTop="40dp"
+            android:layout_toRightOf="@id/CelciusValue"
+            android:textColor="@color/g2"
+            android:id="@+id/degree"/>
+        
+  
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/txtGuidene"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Guidences"
+        android:textSize="30sp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/MiddleCard"
+        android:layout_marginStart="20dp"/>
+    <TextView
+        android:id="@+id/guide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Watering recommendation : LOW"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/txtGuidene"
+        android:layout_marginStart="20dp"/>
+
+
+</RelativeLayout>
