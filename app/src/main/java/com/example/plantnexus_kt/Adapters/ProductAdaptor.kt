@@ -29,14 +29,15 @@ class ProductAdaptor(val ProductList : ArrayList<Plants>,val mcontxt : Context) 
     }
 
     override fun getItemCount(): Int {
+
         return ProductList.size;
         notifyDataSetChanged()
+
     }
 
     override fun onBindViewHolder(holder: ViewH, position: Int) {
         Glide.with(mcontxt).asBitmap().load(ProductList.get(position).plantImagePreview).into(holder.ImgHolder);
         holder.plantname.text = ProductList.get(position).plantname
-
         holder.ImgHolder.setOnClickListener(View.OnClickListener {
             val to :Intent = Intent(mcontxt,ScanResults::class.java)
             to.putExtra("PRODUCTSELECTED",ProductList.get(position))

@@ -44,6 +44,9 @@ class DashBoard_Customer : AppCompatActivity() {
     private lateinit var blogthree      : CardView
     private lateinit var dragger        : RelativeLayout
     private lateinit var holderr        : RelativeLayout
+    private lateinit var OpenTemp        : RelativeLayout
+    private lateinit var TempCard        : RelativeLayout
+    private lateinit var closeT        : RelativeLayout
     private lateinit var rec_products   : RecyclerView
     private lateinit var rec_products_grid  : RecyclerView
     private lateinit var ok : OkHttpClient
@@ -67,6 +70,11 @@ class DashBoard_Customer : AppCompatActivity() {
 
        init()
 
+
+        closeT.setOnClickListener(View.OnClickListener {
+            OpenTemp.visibility = View.VISIBLE
+            TempCard.visibility = View.INVISIBLE;
+        })
 
 
 
@@ -110,6 +118,12 @@ class DashBoard_Customer : AppCompatActivity() {
 
             }
 
+        })
+
+
+        OpenTemp.setOnClickListener(View.OnClickListener {
+            OpenTemp.visibility = View.INVISIBLE
+            TempCard.visibility = View.VISIBLE;
         })
         val urI = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXXSw2WdbA_N-adSzC8inRb41z191p-DVktreRD5W4xq4UoZIMSKE9KmwD7uCwfdsj4t4&usqp=CAU"
 
@@ -262,11 +276,15 @@ class DashBoard_Customer : AppCompatActivity() {
         blogone = findViewById(R.id.blogone)
         blogtwo = findViewById(R.id.blogtwo)
         blogthree = findViewById(R.id.blogthree)
+        OpenTemp = findViewById(R.id.Tempholder_dash_minMized)
+        TempCard = findViewById(R.id.Tempholder_dash)
         dragger = findViewById(R.id.dragger)
         holderr = findViewById(R.id.rec_holder_dash)
         rec_products = findViewById(R.id.products_dash)
+        closeT = findViewById(R.id.close_temp_details)
         ok = OkHttpClient()
         fetchurl = Request.Builder().url(url).build()
+
         rec_products_grid = findViewById(R.id.products_dash_grid)
         phaseT =findViewById(R.id.tempPhase)
         LocationP = LocationServices.getFusedLocationProviderClient(this@DashBoard_Customer)

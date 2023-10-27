@@ -3,6 +3,7 @@
     android:layout_width="360dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="10dp"
+    android:id="@+id/Cards"
     android:backgroundTint="@color/c1"
     android:layout_marginTop="2dp"
     android:layout_height="220dp">
