@@ -61,15 +61,19 @@ class DashBoard_Customer : AppCompatActivity() {
     val REQUEST_IMAGE_CAPTURE = 100
     val JSON = ("application/json; charset=utf-8").toMediaTypeOrNull()
 
-    val url:String = "https://us-east-1.aws.data.mongodb-api.com/app/procurementx1-msxsm/endpoint/Plants"
+
     val PlantScanURL ="https://plant.id/api/v3/identification"
+    var PlantsList = ArrayList<Plants>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dash_board_customer);
 
+        init()
+
         val urlPlants = "https://us-east-1.aws.data.mongodb-api.com/app/procurementx1-msxsm/endpoint/Plants";
         val PlantsFetchRequest = Request.Builder().url(urlPlants).build();
+
         val axios = OkHttpClient()
         axios.newCall(PlantsFetchRequest).enqueue(object :Callback
         {
@@ -78,9 +82,26 @@ class DashBoard_Customer : AppCompatActivity() {
             }
 
             override fun onResponse(call: Call, response: Response) {
-                //val response = response.body?.string() as;
-                val response =
-                Log.d("PLANTFEATCH -  SUCESS ",response.toString())
+                val Plants_list = ArrayList<Plants>()
+                val RM = response.body?.string().to(ArrayList<Any>())
+                val T= RM.first
+                val g = JSONArray(T)
+                for ( i in 0 until g.length())
+                {
+                    val plant = g.getJSONObject(i)
+                    val p1 = Plants(
+                        plant.get("Plantname").toString(),
+                        plant.get("Plantimgurl").toString(),
+                        plant.get("price").toString().toDouble(),
+                        plant.get("about").toString(),
+                        plant.get("mode").toString(),
+                        plant.get("varient").toString(),
+                        plant.get("qty").toString().toInt()
+                        )
+                    PlantsList.add(p1)
+                }
+
+
             }
 
         })
@@ -89,7 +110,7 @@ class DashBoard_Customer : AppCompatActivity() {
 
 
 
-       init()
+
 
 
         closeT.setOnClickListener(View.OnClickListener {
@@ -130,20 +151,6 @@ class DashBoard_Customer : AppCompatActivity() {
         })
 
 
-        ok.newCall(fetchurl).enqueue(object : Callback{
-            override fun onFailure(call: Call, e: IOException)
-            {
-               e.printStackTrace()
-            }
-
-            override fun onResponse(call: Call, response: Response)
-            {
-                val responseData = response.body?.string()
-                Log.d("DATAFEATCHED",responseData.toString())
-
-            }
-
-        })
 
 
         OpenTemp.setOnClickListener(View.OnClickListener {
@@ -158,12 +165,8 @@ class DashBoard_Customer : AppCompatActivity() {
         val p4 = Plants("Cactus2",urI,3300.00);
         val p5 = Plants("Cactus2",urI,3300.00);
 
-        val PlantsList = ArrayList<Plants>()
-        PlantsList.add(p1);
-        PlantsList.add(p2);
-        PlantsList.add(p3);
-        PlantsList.add(p4);
-        PlantsList.add(p5);
+
+
 
         val ADAPTER = ProductAdaptor(PlantsList,this@DashBoard_Customer);
         rec_products.layoutManager = LinearLayoutManager(this@DashBoard_Customer,LinearLayoutManager.HORIZONTAL,false)
@@ -184,7 +187,7 @@ class DashBoard_Customer : AppCompatActivity() {
                 )
                 prams.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM)
 
-
+                rec_products.visibility = View.VISIBLE
                 rec_products.layoutManager = LinearLayoutManager(this@DashBoard_Customer,LinearLayoutManager.HORIZONTAL,false)
                 holderr.layoutParams = prams
                 rec_products_grid.visibility= View.GONE
@@ -205,7 +208,7 @@ class DashBoard_Customer : AppCompatActivity() {
                 )
                 prams.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM)
 
-
+                rec_products.visibility = View.GONE
                 rec_products.layoutManager = LinearLayoutManager(this@DashBoard_Customer,LinearLayoutManager.HORIZONTAL,false)
 
                 holderr.layoutParams = prams
@@ -308,7 +311,7 @@ class DashBoard_Customer : AppCompatActivity() {
         rec_products = findViewById(R.id.products_dash)
         closeT = findViewById(R.id.close_temp_details)
         ok = OkHttpClient()
-        fetchurl = Request.Builder().url(url).build()
+
 
         rec_products_grid = findViewById(R.id.products_dash_grid)
         phaseT =findViewById(R.id.tempPhase)

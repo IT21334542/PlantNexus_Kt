@@ -88,7 +88,11 @@
         android:layout_height="500dp">
         <TextView
             android:id="@+id/plant_desc"
+            android:layout_above="@id/btnplaceOrder_search"
             android:layout_marginTop="100dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:textSize="24sp"
             android:layout_width="match_parent"
             android:layout_height="260dp"/>
 
@@ -124,11 +128,12 @@
         android:layout_marginStart="30dp"
         android:id="@+id/card_scan">
         <RelativeLayout
+            android:id="@+id/fre"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
             <ImageView
                 android:id="@+id/productimg"
-                android:background="@color/main_green"
+                android:background="@color/white"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>
         </RelativeLayout>

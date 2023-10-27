@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/main_green"
+    android:background="@color/white"
     tools:context=".DashBoard_Customer">
     
     <RelativeLayout
@@ -79,7 +79,24 @@
                 android:layout_marginTop="2dp"
                 android:layout_marginEnd="2dp"
                 android:layout_marginBottom="2dp"
-                android:backgroundTint="@color/g2" />
+                android:backgroundTint="@color/g2" >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/chat_foreground"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="Garden GURU"
+                    android:textColor="@color/white"
+                    android:layout_alignParentBottom="true"
+                    android:layout_margin="5dp"/>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/card_orders"
@@ -91,7 +108,24 @@
                 android:layout_marginTop="2dp"
                 android:layout_marginEnd="2dp"
                 android:layout_marginBottom="2dp"
-                android:backgroundTint="@color/g2" />
+                android:backgroundTint="@color/g2" >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/card_foreground"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="MyORDERS"
+                        android:textColor="@color/white"
+                        android:layout_alignParentBottom="true"
+                        android:layout_margin="5dp"/>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
         </RelativeLayout>
     </RelativeLayout>
 
@@ -135,21 +169,13 @@
                 android:text="hel"
                 android:textStyle="normal"
                 android:textColor="@color/g2"
-                android:layout_below="@id/tempPhase"
-                android:textSize="16sp"
+                android:layout_centerInParent="true"
+                android:textSize="24sp"
                 android:textAlignment="center"
                 android:id="@+id/tempValue"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
-            <TextView
-                android:text="hel"
-                android:textStyle="normal"
-                android:textColor="@color/g2"
-                android:textSize="16sp"
-                android:textAlignment="center"
-                android:id="@+id/tempPhase"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+
         </RelativeLayout>
         <RelativeLayout
             android:id="@+id/LeftR"
@@ -162,14 +188,25 @@
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="Watering Plant not recommaded"
+            android:layout_height="wrap_content"
+            android:text="Climate Now "
             android:textSize="16sp"
             android:textColor="@color/white"
             android:layout_toRightOf="@id/LeftR"
             android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
             android:id="@+id/reccomadation"/>
+        <TextView
+            android:text="hel"
+            android:textStyle="normal"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textAlignment="center"
+            android:id="@+id/tempPhase"
+            android:layout_below="@id/reccomadation"
+            android:layout_alignStart="@id/reccomadation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
     </RelativeLayout>
 
     <RelativeLayout
@@ -213,7 +250,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Blog"
-                    android:textColor="@color/white"
+                    android:textColor="@color/g2"
                     android:textSize="24sp"
                     android:layout_marginStart="15dp"
                     android:layout_marginTop="10dp"
@@ -243,8 +280,18 @@
                         android:id="@+id/blogone"
                         android:layout_width="350dp"
                         android:layout_height="200dp"
-                        android:layout_margin="5dp"
-                        android:backgroundTint="@color/g2" />
+
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:backgroundTint="@color/g2" >
+                        <ImageView
+                            android:padding="0dp"
+                            android:layout_width="100dp"
+                            android:layout_height="match_parent"
+                            android:src="@mipmap/b4_foreground"/>
+                    </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/blogtwo"
@@ -252,7 +299,12 @@
                         android:layout_height="200dp"
                         android:layout_margin="5dp"
                         android:layout_toRightOf="@id/blogone"
-                        android:backgroundTint="@color/g2" />
+                        android:backgroundTint="@color/g2">
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@mipmap/b3_foreground"/>
+                    </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/blogthree"
@@ -260,7 +312,17 @@
                         android:layout_height="200dp"
                         android:layout_margin="5dp"
                         android:layout_toRightOf="@id/blogtwo"
-                        android:backgroundTint="@color/g2" />
+                        android:backgroundTint="@color/g2" >
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@mipmap/b2_foreground"/>
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
 
                 </RelativeLayout>
 
