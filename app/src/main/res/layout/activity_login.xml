@@ -18,19 +18,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/username"
-        android:text="@string/username"
         android:textAlignment="center"
-        android:textSize="34sp" />
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="30sp" />
 
     <EditText
         android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="@string/login"
+        android:hint="@string/password"
         android:inputType="textPassword"
         android:textAlignment="center"
-        android:textSize="34sp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="30sp"
         tools:text="@string/password" />
 
     <Button

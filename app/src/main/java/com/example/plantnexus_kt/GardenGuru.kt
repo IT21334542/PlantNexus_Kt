@@ -1,10 +1,12 @@
 package com.example.plantnexus_kt
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.inputmethod.EditorInfo
 import android.widget.ArrayAdapter
+import android.widget.ImageView
 import android.widget.ListView
 import android.widget.TextView
 import android.widget.Toast
@@ -23,7 +25,7 @@ import java.io.IOException
 
 class GardenGuru : AppCompatActivity() {
     private val client = OkHttpClient()
-    // Creating variables on the lines below.
+    lateinit var home : ImageView
     lateinit var txtResponse: TextView
     lateinit var idTVQuestion: TextView
     lateinit var etQuestion: TextInputEditText
@@ -37,6 +39,7 @@ class GardenGuru : AppCompatActivity() {
         setContentView(R.layout.activity_garden_guru)
         etQuestion = findViewById(R.id.etQuestion)
         idTVQuestion = findViewById(R.id.idTVQuestion)
+        home = findViewById(R.id.home_serach)
         txtResponse = findViewById(R.id.txtResponse)
         mListView = findViewById(R.id.responselist)
         arrayAdapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, history)
@@ -63,6 +66,11 @@ class GardenGuru : AppCompatActivity() {
             }
             false
         })
+
+        home.setOnClickListener {
+            startActivity(Intent(this@GardenGuru, Login::class.java))
+        }
+
     }
 
     fun getResponse(question: String, callback: (String) -> Unit) {

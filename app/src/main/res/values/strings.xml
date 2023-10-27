@@ -21,4 +21,8 @@
     <string name="garden_guru">Garden Guru</string>
     <string name="user">User</string>
     <string name="ask_anything">Ask anything</string>
+    <string name="logo_of_plantnexus">logo of Plant Nexus</string>
+    <string name="customer">Customer</string>
+    <string name="seller">Seller</string>
+    <string name="navigate_to_regsiter_choose">Navigate to Regsiter choose</string>
 </resources>

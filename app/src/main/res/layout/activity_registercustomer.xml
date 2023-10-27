@@ -26,13 +26,16 @@
             android:layout_marginTop="4dp"
             android:layout_marginEnd="275dp"
             android:layout_marginBottom="24dp"
-            app:srcCompat="@drawable/cross_in_foreground" />
+            android:backgroundTint="#00FFFFFF"
+            app:srcCompat="@drawable/cross_in_foreground"
+            android:contentDescription="@string/navigate_to_regsiter_choose" />
 
         <TextView
             android:id="@+id/welcome"
             android:layout_width="169dp"
             android:layout_height="wrap_content"
             android:text="@string/welcome_community"
+            android:textColor="@color/black"
             android:textSize="24sp" />
     </LinearLayout>
 
@@ -54,9 +57,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="52dp"
             android:ems="10"
+            android:hint="@string/fullname"
             android:inputType="text"
-            android:text="@string/fullname"
             android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
             android:textSize="@dimen/register_details" />
 
         <EditText
@@ -64,9 +69,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:hint="@string/username"
             android:inputType="text"
-            android:text="@string/username"
             android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
             android:textSize="@dimen/register_details" />
 
         <EditText
@@ -76,8 +83,9 @@
             android:ems="10"
             android:hint="@string/password"
             android:inputType="textPassword"
-            android:text="@string/password"
             android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
             android:textSize="@dimen/password" />
 
         <EditText
@@ -85,9 +93,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:hint="@string/phone"
             android:inputType="phone"
-            android:text="@string/phone"
             android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
             android:textSize="@dimen/password" />
 
         <Button
@@ -104,7 +114,8 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="152dp"
-            android:src="@mipmap/app_logo_foreground" />
+            android:src="@mipmap/app_logo_foreground"
+            android:contentDescription="@string/app_name" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
