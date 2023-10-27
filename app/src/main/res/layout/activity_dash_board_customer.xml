@@ -196,16 +196,24 @@
             android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
             android:id="@+id/reccomadation"/>
+        <ImageView
+            android:layout_toEndOf="@id/reccomadation"
+            android:src="@mipmap/temp_foreground"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
         <TextView
             android:text="hel"
-            android:textStyle="normal"
+            android:textStyle="bold"
             android:textColor="@color/white"
             android:textSize="16sp"
             android:textAlignment="center"
             android:id="@+id/tempPhase"
             android:layout_below="@id/reccomadation"
             android:layout_alignStart="@id/reccomadation"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
+            android:layout_alignLeft="@id/reccomadation"
+            android:layout_marginStart="20dp"
             android:layout_height="wrap_content"/>
     </RelativeLayout>
 
