@@ -12,12 +12,12 @@
         android:layout_width="match_parent"
         android:layout_height="331dp"
         android:src="@mipmap/app_logo_foreground" />
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/sign_in_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" />
 
-    <ImageView
-        android:id="@+id/google"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        app:srcCompat="@drawable/google" />
 
     <EditText
         android:id="@+id/username"
