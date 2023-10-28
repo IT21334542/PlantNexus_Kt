@@ -67,7 +67,12 @@ class GardenGuru : AppCompatActivity() {
         })
 
         home.setOnClickListener {
-            startActivity(Intent(this@GardenGuru,Login::class.java))
+            try{
+                startActivity(Intent(this@GardenGuru, DashBoard_Customer::class.java))
+            }catch (E:Exception)
+            {
+                Log.d("backHomeError",E.toString())
+            }
         }
 
     }
@@ -76,7 +81,7 @@ class GardenGuru : AppCompatActivity() {
         idTVQuestion.text = question
         etQuestion.setText("")
 
-        val apiKey = "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"
+        val apiKey = ""
         val url = "https://api.openai.com/v1/engines/text-davinci-003/completions"
 
         val requestBody = """

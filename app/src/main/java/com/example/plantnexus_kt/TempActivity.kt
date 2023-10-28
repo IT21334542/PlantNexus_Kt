@@ -26,6 +26,7 @@ class TempActivity : AppCompatActivity() {
     private lateinit var phasetxt :TextView
     private lateinit var calcuis :TextView
     private lateinit var gide :TextView
+    private lateinit var gidefeed :TextView
     private lateinit var huum :TextView
     private lateinit var deew :TextView
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -120,22 +121,28 @@ class TempActivity : AppCompatActivity() {
                             if (isPrecip)
                             {
                                 Glide.with(this@TempActivity).asBitmap().load(R.mipmap.rainny_foreground).into(weatherIcon)
-
+                                gide.text = "Watering recommendation : VERY LOW"
+                                gidefeed.text = "Plant Feeding/ Fertilizing : Risk"
                             }else
                             {
                                 println(cloudcound.toString().toInt())
                                 if(cloudcound.toString().toInt()==0)
                                 {
                                     Glide.with(this@TempActivity).asBitmap().load(R.mipmap.sunny).into(weatherIcon)
+                                    gide.text = "Watering recommendation : HIGH"
+                                    gidefeed.text = "Plant Feeding/ Fertilizing : MUST"
                                 }
                                 else if (cloudcound.toString().toInt()<=50)
                                 {
                                     Glide.with(this@TempActivity).asBitmap().load(R.mipmap.mid_foreground).into(weatherIcon)
+                                    gide.text = "Watering recommendation : LOW"
+                                    gidefeed.text = "Plant Feeding/ Fertilizing : NEEDED"
                                 }
                                 else
                                 {
                                     Glide.with(this@TempActivity).asBitmap().load(R.mipmap.cloudy_foreground).into(weatherIcon)
-
+                                    gide.text = "Watering recommendation : LOW"
+                                    gidefeed.text = "Plant Feeding/ Fertilizing : NORMAL"
                                 }
                             }
                         }
@@ -157,11 +164,21 @@ class TempActivity : AppCompatActivity() {
 
     private fun onClicks() {
         backN.setOnClickListener(View.OnClickListener {
-            startActivity(Intent(this@TempActivity,DashBoard_Customer::class.java))
+            try{
+                startActivity(Intent(this@TempActivity,DashBoard_Customer::class.java))
+            }catch (E:Exception)
+            {
+                Log.d("backHomeError",E.toString())
+            }
         })
 
         HomeN.setOnClickListener(View.OnClickListener {
-            startActivity(Intent(this@TempActivity,DashBoard_Customer::class.java))
+            try{
+                startActivity(Intent(this@TempActivity,DashBoard_Customer::class.java))
+            }catch (E:Exception)
+            {
+                Log.d("backHomeError",E.toString())
+            }
         })
     }
 
@@ -173,6 +190,7 @@ class TempActivity : AppCompatActivity() {
         phasetxt = findViewById(R.id.mini)
         calcuis = findViewById(R.id.CelciusValue)
         gide= findViewById(R.id.guide)
+        gidefeed= findViewById(R.id.guidetwo)
         huum= findViewById(R.id.HumidityV)
         deew= findViewById(R.id.DewPointV)
     }

@@ -98,7 +98,7 @@
             android:layout_marginTop="30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hum:"
+            android:text="Humidity:"
             android:textColor="@color/g2"
             android:textSize="24sp"
             android:layout_below="@id/CelciusValue"
@@ -122,7 +122,7 @@
             android:layout_alignParentEnd="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="DewV:"
+            android:text="Dew:"
             android:textColor="@color/g2"
             android:textSize="24sp"
             android:layout_below="@id/CelciusValue"
@@ -134,7 +134,7 @@
 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="DewV:"
+            android:text="Dew:"
             android:layout_toLeftOf="@id/DewPointV"
             android:textColor="@color/g2"
             android:textSize="24sp"
@@ -170,6 +170,16 @@
         android:textColor="@color/g2"
         android:layout_marginTop="20dp"
         android:layout_below="@id/txtGuidene"
+        android:layout_marginStart="20dp"/>
+    <TextView
+        android:id="@+id/guidetwo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Plant Feeding/ Fertilizing    : RISK"
+        android:textSize="20sp"
+        android:textColor="@color/g2"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/guide"
         android:layout_marginStart="20dp"/>
 
 

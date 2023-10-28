@@ -113,11 +113,21 @@ class PlaceOrder : AppCompatActivity() {
 
     private fun clicks() {
         home.setOnClickListener(View.OnClickListener {
-            startActivity(Intent(this@PlaceOrder,DashBoard_Customer::class.java))
+            try{
+                startActivity(Intent(this@PlaceOrder,DashBoard_Customer::class.java))
+            }catch (E:Exception)
+            {
+                Log.d("backHomeError",E.toString())
+            }
         })
 
         backNavi.setOnClickListener(View.OnClickListener {
-            startActivity(Intent(this@PlaceOrder,ScanResults::class.java))
+            try{
+                startActivity(Intent(this@PlaceOrder,DashBoard_Customer::class.java))
+            }catch (E:Exception)
+            {
+                Log.d("backHomeError",E.toString())
+            }
         })
 
         btnSearch.setOnClickListener(View.OnClickListener {
