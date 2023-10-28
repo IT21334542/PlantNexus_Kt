@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.plantnexus_kt.Models.Plants
 import com.example.plantnexus_kt.Models.Shops
 import com.example.plantnexus_kt.OnShop
 import com.example.plantnexus_kt.R
@@ -41,7 +42,9 @@ class ShopsAdaptor(val mcontxt : Context,val ShoppersList:ArrayList<Shops>): Rec
         holder.ShopName.text = ShoppersList.get(position).Shopname
         holder.Shoplocation.text = ShoppersList.get(position).Shoplocation
         holder.Cards.setOnClickListener(View.OnClickListener {
-          mcontxt.startActivity(Intent(mcontxt,OnShop::class.java))
+            val to = Intent(mcontxt,OnShop::class.java)
+            to.putExtra("SHOP",ShoppersList.get(position))
+          mcontxt.startActivity(to)
         })
         Glide.with(mcontxt).asBitmap().load(ShoppersList.get(position).ShopPreviewUrl).into(holder.Img)
 

@@ -51,5 +51,13 @@ class ItemAdapter(val List : ArrayList<Plants>,val mcontxt :Context): RecyclerVi
                 List.get(position).qty=  List.get(position).qty - 1;
             holder.qty.text = List.get(position).qty.toString()
         })
+
+        holder.bin.setOnClickListener(View.OnClickListener {
+            List.removeAt(position)
+        })
+
+
+
+
     }
 }
