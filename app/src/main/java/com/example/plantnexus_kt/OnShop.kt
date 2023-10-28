@@ -3,6 +3,7 @@ package com.example.plantnexus_kt
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
@@ -66,10 +67,20 @@ class OnShop : AppCompatActivity() {
 
     private fun onCLICKS() {
         backNavi.setOnClickListener(View.OnClickListener {
-            startActivity(Intent(this@OnShop,PlaceOrder::class.java))
+            try{
+                startActivity(Intent(this@OnShop,PlaceOrder::class.java))
+            }catch (E:Exception)
+            {
+                Log.d("backHomeError",E.toString())
+            }
         })
         homeNavi.setOnClickListener(View.OnClickListener {
-            startActivity(Intent(this@OnShop,DashBoard_Customer::class.java))
+            try{
+                startActivity(Intent(this@OnShop,PlaceOrder::class.java))
+            }catch (E:Exception)
+            {
+                Log.d("backHomeError",E.toString())
+            }
         })
         btnminimize.setOnClickListener(View.OnClickListener {
             btnExpand.visibility = View.VISIBLE;

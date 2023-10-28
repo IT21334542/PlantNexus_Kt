@@ -51,7 +51,7 @@ class SearchResults_nexus : AppCompatActivity() {
         txttiltle.text = plant.plantname
 
         question = "Give me the details about the " + txttiltle.text.toString() + "in 40 words"
-        oriquestion="Give me the non scientific name of " + txttiltle.text.toString()
+        oriquestion="Give me three non scientific name of " + txttiltle.text.toString()
 
         getResponse(question) { response ->
             runOnUiThread {
@@ -80,7 +80,7 @@ class SearchResults_nexus : AppCompatActivity() {
 
     private fun getResponse(question: String, callback: (String) -> Unit) {
 
-        val apiKey = "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"
+        val apiKey = ""
         val url = "https://api.openai.com/v1/engines/text-davinci-003/completions"
 
         val requestBody = """
