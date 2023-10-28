@@ -12,6 +12,7 @@ import com.example.plantnexus_kt.Adapters.ItemAdapter
 import com.example.plantnexus_kt.Adapters.ProdAdapter
 import com.example.plantnexus_kt.Adapters.ProductAdaptor
 import com.example.plantnexus_kt.Models.Plants
+import com.example.plantnexus_kt.Models.Shops
 
 private lateinit var backNavi : ImageView
 private lateinit var homeNavi : ImageView
@@ -35,21 +36,20 @@ class OnShop : AppCompatActivity() {
         initAll()
         onCLICKS()
 
-        val ListProducts = ArrayList<Plants>()
-        val ListItems = ArrayList<Plants>()
+
+
 
 
       //Plant
-        val urI = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXXSw2WdbA_N-adSzC8inRb41z191p-DVktreRD5W4xq4UoZIMSKE9KmwD7uCwfdsj4t4&usqp=CAU"
-        val P1 = Plants("Cactus",urI,3300.00);
+        val SHOPS = intent.getSerializableExtra("SHOP") as Shops
 
 
-        ListProducts.add(P1);
-        ListItems.add(P1)
+        val ListProducts = SHOPS.PlantsSells
+        val ListItems = ArrayList<Plants>()
      //Adapators and Layouts for Recyclers
 
         //ProductRecycler
-        val PlantsAdap = ProdAdapter(ListProducts,this@OnShop)
+        val PlantsAdap = ProdAdapter(ListProducts,this@OnShop,ListItems)
 
         recProducts.layoutManager = LinearLayoutManager(this@OnShop)
         recProducts.adapter = PlantsAdap
@@ -59,6 +59,7 @@ class OnShop : AppCompatActivity() {
 
         recCard.layoutManager = LinearLayoutManager(this@OnShop)
         recCard.adapter = ItemAdap
+
 
 
     }

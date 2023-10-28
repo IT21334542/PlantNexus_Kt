@@ -58,10 +58,11 @@ class PlaceOrder : AppCompatActivity() {
                    for (i in 0 until JARRAY.length())
                    {
                        val JSO = JARRAY.getJSONObject(i)
-                       val JSOPlants = JARRAY.getJSONArray(i)
+                       val JSOPlants = JSO.getJSONArray("Plants")
                        val PlantList = ArrayList<Plants>()
                        for (i in 0 until JSOPlants.length())
                        {
+
                            val Plant = JSOPlants.getJSONObject(i);
                            val p = Plants(
                                Plant.getString("Plantname"),
@@ -80,6 +81,7 @@ class PlaceOrder : AppCompatActivity() {
                            PlantList
                        )
                        ShopsList.add(Shops)
+                       Log.d("Shops", ShopsList.toString())
 
                    }
 

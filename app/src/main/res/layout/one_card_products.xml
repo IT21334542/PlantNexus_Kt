@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="5dp"
     android:elevation="20dp"
+    android:id="@+id/Cars"
     android:layout_margin="2dp"
     android:backgroundTint="@color/c1"
     android:layout_height="260dp">
