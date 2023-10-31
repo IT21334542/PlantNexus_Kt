@@ -16,3 +16,17 @@ Key Features and Functionalities
 9.	User-Friendly Interface
 10.	VR/AR Product Demonstrations (Optional)
 
+Video Demonstration: 
+https://drive.google.com/file/d/1A-gWOfejCgJiy_IW5x-78vcSiIQlGGP2/view?t=4s 
+
+<img width="236" alt="image" src="https://github.com/IT21334542/PlantNexus_Kt/assets/99646475/bb4cdd0c-c25e-4dce-a9b5-ff2a01234902">
+<img width="236" alt="image" src="https://github.com/IT21334542/PlantNexus_Kt/assets/99646475/643ac28d-0ef4-4900-84ee-fd62af4122e8">
+<img width="244" alt="image" src="https://github.com/IT21334542/PlantNexus_Kt/assets/99646475/b5aea997-2920-4c82-9430-306955070af6">
+<img width="244" alt="image" src="https://github.com/IT21334542/PlantNexus_Kt/assets/99646475/373a403d-3a1e-40c9-ba0d-e1a524f6afb5">
+
+
+
+
+
+
+
