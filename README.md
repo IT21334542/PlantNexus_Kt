@@ -45,6 +45,7 @@ https://drive.google.com/file/d/1A-gWOfejCgJiy_IW5x-78vcSiIQlGGP2/view?t=4s
 <img width="243" alt="image" src="https://github.com/IT21334542/PlantNexus_Kt/assets/99646475/a019486d-9fc2-42e6-bfca-7784a8fa872c">
 <img width="245" alt="image" src="https://github.com/IT21334542/PlantNexus_Kt/assets/99646475/bafcdd16-a557-4d2f-9d14-5747fda85346">
 <img width="248" alt="image" src="https://github.com/IT21334542/PlantNexus_Kt/assets/99646475/740b46f9-e856-41df-a120-3ce8a192693c">
+<img width="247" alt="image" src="https://github.com/IT21334542/PlantNexus_Kt/assets/99646475/e1620dbb-1745-408a-8a8d-bbeff4e62d83">
 
 
 
