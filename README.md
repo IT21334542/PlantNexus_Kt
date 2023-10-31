@@ -35,6 +35,12 @@ https://drive.google.com/file/d/1A-gWOfejCgJiy_IW5x-78vcSiIQlGGP2/view?t=4s
 <img width="244" alt="image" src="https://github.com/IT21334542/PlantNexus_Kt/assets/99646475/d72031e0-6ba0-4f6e-ae9b-f4ae8fe05d65">
 <img width="243" alt="image" src="https://github.com/IT21334542/PlantNexus_Kt/assets/99646475/d63b127e-e707-4507-a85f-75f6cf9d4d92">
 <img width="241" alt="image" src="https://github.com/IT21334542/PlantNexus_Kt/assets/99646475/eef3fe8f-b57f-4acd-a4c3-89414196fa6c">
+<img width="245" alt="image" src="https://github.com/IT21334542/PlantNexus_Kt/assets/99646475/3701efe0-6242-4fc6-a05e-603fdb64174f">
+<img width="244" alt="image" src="https://github.com/IT21334542/PlantNexus_Kt/assets/99646475/3165da61-4e24-4317-b737-3870b92dc3fb">
+<img width="251" alt="image" src="https://github.com/IT21334542/PlantNexus_Kt/assets/99646475/5499cb99-8efb-4ef4-8e04-dd04d874ed94">
+<img width="248" alt="image" src="https://github.com/IT21334542/PlantNexus_Kt/assets/99646475/7cecd8a9-017e-43f3-8b38-433c483badb4">
+
+
 
 
 
